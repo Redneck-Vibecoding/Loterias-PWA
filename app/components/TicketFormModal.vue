@@ -85,6 +85,29 @@ watch(() => state.game, (newGameId) => {
   }
 })
 
+const resetForm = () => {
+  state.id = uuidv4()
+  state.organization = 'onlae'
+  const def = getGameById('bonoloto')
+  state.game = 'bonoloto'
+  state.gameName = def.name
+  state.title = 'Bonoloto'
+  state.date = new Date().toISOString().slice(0, 10)
+  state.drawDate = new Date().toISOString().slice(0, 10)
+  state.numbers = ''
+  state.betsCount = 1
+  state.cost = def.defaultCost
+  state.status = 'pending'
+  state.prize = 0
+  state.ticketPhoto = undefined
+  state.ticketPhotoId = undefined
+  state.ticketPhotoName = undefined
+  state.ticketPhotoType = undefined
+  state.notes = ''
+  costInput.value = def.defaultCost.toFixed(2)
+  prizeInput.value = '0.00'
+}
+
 watch(() => props.initialData, async (t) => {
   if (t) {
     state.id = t.id
@@ -118,28 +141,11 @@ watch(() => props.initialData, async (t) => {
   }
 }, { immediate: true })
 
-const resetForm = () => {
-  state.id = uuidv4()
-  state.organization = 'onlae'
-  const def = getGameById('bonoloto')
-  state.game = 'bonoloto'
-  state.gameName = def.name
-  state.title = 'Bonoloto'
-  state.date = new Date().toISOString().slice(0, 10)
-  state.drawDate = new Date().toISOString().slice(0, 10)
-  state.numbers = ''
-  state.betsCount = 1
-  state.cost = def.defaultCost
-  state.status = 'pending'
-  state.prize = 0
-  state.ticketPhoto = undefined
-  state.ticketPhotoId = undefined
-  state.ticketPhotoName = undefined
-  state.ticketPhotoType = undefined
-  state.notes = ''
-  costInput.value = def.defaultCost.toFixed(2)
-  prizeInput.value = '0.00'
-}
+watch(isOpen, (open) => {
+  if (open && !props.initialData) {
+    resetForm()
+  }
+})
 
 // Photo Handling
 const openCamera = () => {
@@ -166,29 +172,6 @@ const onFileSelected = async (event: Event) => {
   } finally {
     isProcessingImage.value = false
     input.value = ''
-  }
-}
-
-const onCropConfirm = async (blob: Blob, grayscale: boolean) => {
-  try {
-    isProcessingImage.value = true
-    const compressed = await compressImageToDataUrl(blob, `ticket-${Date.now()}.jpg`, { grayscale })
-    state.ticketPhoto = compressed.dataUrl
-    state.ticketPhotoName = compressed.name
-    state.ticketPhotoType = compressed.type
-
-    toast.add({
-      title: 'Foto guardada',
-      description: 'Imagen del boleto optimizada y lista',
-      color: 'success'
-    })
-
-    // Automatically trigger smart lottery OCR detection
-    void runOcrAnalysis(compressed.dataUrl)
-  } catch (e) {
-    console.error('Error compressing image:', e)
-  } finally {
-    isProcessingImage.value = false
   }
 }
 
@@ -220,6 +203,29 @@ const runOcrAnalysis = async (imageDataUrl: string) => {
     console.warn('OCR error or unsupported:', e)
   } finally {
     isRunningOcr.value = false
+  }
+}
+
+const onCropConfirm = async (blob: Blob, grayscale: boolean) => {
+  try {
+    isProcessingImage.value = true
+    const compressed = await compressImageToDataUrl(blob, `ticket-${Date.now()}.jpg`, { grayscale })
+    state.ticketPhoto = compressed.dataUrl
+    state.ticketPhotoName = compressed.name
+    state.ticketPhotoType = compressed.type
+
+    toast.add({
+      title: 'Foto guardada',
+      description: 'Imagen del boleto optimizada y lista',
+      color: 'success'
+    })
+
+    // Automatically trigger smart lottery OCR detection
+    void runOcrAnalysis(compressed.dataUrl)
+  } catch (e) {
+    console.error('Error compressing image:', e)
+  } finally {
+    isProcessingImage.value = false
   }
 }
 
