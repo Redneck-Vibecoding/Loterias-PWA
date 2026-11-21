@@ -9,6 +9,7 @@ import type { LotteryOrganization } from '~/utils/lotteryGames'
 const lotteryStore = useLotteryStore()
 const settingsStore = useSettingsStore()
 const { tickets } = storeToRefs(lotteryStore)
+const { public: { appVersion, appReleaseDate } } = useRuntimeConfig()
 const toast = useToast()
 
 const monthlyBudgetInput = ref(String(settingsStore.monthlyBudget || 50))
@@ -150,6 +151,27 @@ const formatBytes = (bytes: number): string => {
 <template>
   <div class="max-w-3xl mx-auto space-y-6">
     <input ref="fileInputRef" type="file" accept=".json" class="hidden" @change="handleFileSelected" />
+
+    <!-- App Version Identifier -->
+    <div class="rounded-3xl bg-gradient-to-r from-brand-700 via-brand-600 to-brand-800 text-white p-4 sm:p-5 shadow-md flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <SiteLogo class="size-11 shrink-0 rounded-2xl shadow-xs" />
+        <div>
+          <span class="text-sm sm:text-base font-black tracking-tight block">LotoControl PWA</span>
+          <span class="text-xs text-blue-100 block">Control de Boletos y Premios</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <span class="text-[11px] font-bold uppercase tracking-wider text-blue-200">Versión</span>
+        <span class="px-2.5 py-1 rounded-xl bg-white/15 border border-white/25 font-mono text-xs sm:text-sm font-black text-white">
+          v{{ appVersion }}
+        </span>
+        <span v-if="appReleaseDate" class="text-xs text-blue-100 hidden sm:inline">
+          ({{ appReleaseDate }})
+        </span>
+      </div>
+    </div>
 
     <!-- Header -->
     <div>

@@ -49,6 +49,7 @@ export default defineNuxtConfig({
     head: {
       title: 'LotoControl - Control de Loterías y Premios',
       link: [
+        { rel: 'icon', type: 'image/svg+xml', href: baseURL + 'icon.svg' },
         { rel: 'icon', type: 'image/png', sizes: '196x196', href: baseURL + 'favicon-196.png' },
         { rel: 'icon', type: 'image/x-icon', href: baseURL + 'favicon.ico' },
         { rel: 'apple-touch-icon', href: baseURL + 'apple-icon-180.png' },
