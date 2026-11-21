@@ -1,0 +1,90 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+/* Page-level floating actions sit above the 4rem mobile bottom navigation and
+   the device safe area. On desktop there is no bottom navigation. */
+.page-floating-action {
+    bottom: calc(env(safe-area-inset-bottom) + 5rem);
+}
+
+@media (min-width: 48rem) {
+    .page-floating-action {
+        bottom: 1.5rem;
+    }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Corporate brand color palette: PREDOMINANT BLUE (Gamas de azul)
+   Deep Royal Blue, Sapphire, Azure & Navy with rich depth
+   ───────────────────────────────────────────────────────────────────────────── */
+@theme static {
+    --color-brand-50:  #eff6ff;
+    --color-brand-100: #dbeafe;
+    --color-brand-200: #bfdbfe;
+    --color-brand-300: #93c5fd;
+    --color-brand-400: #60a5fa;
+    --color-brand-500: #3b82f6;
+    --color-brand-600: #2563eb;
+    --color-brand-700: #1d4ed8;
+    --color-brand-800: #1e40af;
+    --color-brand-900: #1e3a8a;
+    --color-brand-950: #0f172a;
+
+    /* Organization accent colors */
+    --color-onlae:     #1d4ed8;
+    --color-onlae-gold: #f59e0b;
+    --color-once:      #059669;
+    --color-otros:     #8b5cf6;
+    --color-prize:     #10b981;
+}
+
+@layer theme {
+    :root {
+        --ui-color-primary-400: var(--color-brand-500);
+        --ui-color-primary-500: var(--color-brand-600);
+        --ui-color-primary-600: var(--color-brand-700);
+        --site-logo-gradient-start: #3b82f6;
+        --site-logo-gradient-end: #1e40af;
+        --site-logo-foreground: #ffffff;
+    }
+
+    .dark {
+        --ui-color-primary-400: var(--color-brand-400);
+        --ui-color-primary-500: var(--color-brand-500);
+        --ui-color-primary-600: var(--color-brand-600);
+        --site-logo-gradient-start: #60a5fa;
+        --site-logo-gradient-end: #2563eb;
+        --site-logo-foreground: #ffffff;
+    }
+}
+
+/* Custom lottery styling */
+.lottery-gradient-header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #2563eb 100%);
+}
+
+.lottery-card-glow {
+    box-shadow: 0 4px 20px -2px rgba(37, 99, 235, 0.12);
+}
+
+.dark .lottery-card-glow {
+    box-shadow: 0 4px 20px -2px rgba(59, 130, 246, 0.08);
+}
+
+.prose h1 {
+    margin-bottom: 1em;
+}
+
+.prose h2 {
+    margin-top: 1em;
+    margin-bottom: 0.6em;
+}
+
+/* iOS Safari zooms the viewport when a focused form control is below 16px. */
+@media (max-width: 767px) {
+    input,
+    select,
+    textarea {
+        font-size: 16px;
+    }
+}

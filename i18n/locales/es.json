@@ -1,0 +1,644 @@
+{
+  "common": {
+    "firstName": "Nombre",
+    "lastName": "Apellidos",
+    "nationalId": "DNI",
+    "email": "Correo electrónico",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "confirm": "Confirmar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "finish": "Finalizar",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Configuración guardada",
+    "export": "Exportar",
+    "import": "Importar",
+    "disconnect": "Desconectar",
+    "all": "Todos",
+    "current_month": "Mes actual",
+    "all_months": "Todos los meses"
+  },
+  "errors": {
+    "share_not_allowed": "Compartición no permitida, descargando...",
+    "share_not_supported": "Tu dispositivo no soporta compartir este archivo, descargando...",
+    "export_failed": "No se ha podido exportar",
+    "no_data": "No hay datos para exportar",
+    "select_month_export": "Selecciona un mes para exportar"
+  },
+  "success": {},
+  "settings": {
+    "title": "Configuración",
+    "description": "Gestiona tus datos personales y preferencias de la aplicación.",
+    "save": "Guardar configuración",
+    "share_app": "Compartir app",
+    "share_app_title": "Cuánto llevo gastao",
+    "share_app_text": "Control inteligente de compras y gastos de supermercado",
+    "share_app_success": "App compartida correctamente",
+    "share_app_copied": "Enlace de la app copiado al portapapeles",
+    "language": {
+      "title": "Idioma",
+      "description": "Selecciona el idioma de la aplicación."
+    },
+    "budget": {
+      "title": "Presupuesto",
+      "description": "Configura tu presupuesto mensual.",
+      "label": "Presupuesto mensual",
+      "help": "Este importe se utilizará para calcular los porcentajes de gasto en la portada."
+    },
+    "backup": {
+      "title": "Copias de seguridad",
+      "description": "Exporta e importa tus datos para no perder nada.",
+      "export_config": "Exportar Configuración",
+      "import_config": "Importar Backup",
+      "export_data": "Exportar Datos",
+      "select_year": "Selecciona año",
+      "select_month": "Selecciona mes",
+      "encrypt": "Encriptar con contraseña",
+      "password": "Contraseña",
+      "export_btn": "Descargar Backup",
+      "share_btn": "Compartir Backup",
+      "import_placeholder": "Selecciona un archivo .json...",
+      "export_config_btn": "Exportar Config",
+      "export_config_description": "Guarda el presupuesto, las claves API y las opciones de la aplicación.",
+      "export_data_description": "Guarda el registro de compras, desgloses y tickets.",
+      "export_data_btn": "Exportar Datos",
+      "import_config_description": "Restaura una configuración o datos desde un archivo `.json` anterior.",
+      "select_file": "Seleccionar archivo",
+      "change_file": "Cambiar archivo",
+      "search_file": "Buscar archivo...",
+      "process_import": "Procesar Importación",
+      "encrypt_help": "Protege el archivo con una contraseña.",
+      "password_help": "Se utiliza para proteger el archivo exportado.",
+      "imported": "Backup importado",
+      "updated_data_config": "Se han actualizado los datos y la configuración",
+      "updated_data": "Se han actualizado los datos",
+      "updated_config": "Se ha actualizado la configuración",
+      "enter_password": "Introduce la contraseña para importar",
+      "select_file_warning": "Selecciona un archivo de backup",
+      "malformed": "Backup malformado o vacío",
+      "import_config_title": "Importar Configuración",
+      "import_config_confirm": "Esto sobrescribirá la configuración actual. ¿Quieres continuar?",
+      "import_data_title": "Importar Datos",
+      "overwrite_month": "Estás a punto de sobrescribir los datos del mes de {month}. ¿Quieres continuar?",
+      "overwrite_year": "Estás a punto de sobrescribir los datos del año {year}. El resto de años se mantendrán intactos. ¿Quieres continuar?",
+      "overwrite_all": "Estás a punto de sobrescribir TODAS las compras registradas. Esta acción no se puede deshacer. ¿Quieres continuar?",
+      "confirm_import": "Confirmar e Importar",
+      "import_error": "Error al importar (¿contraseña incorrecta?)"
+    },
+    "maintenance": {
+      "title": "Mantenimiento",
+      "description": "Opciones avanzadas de gestión de datos.",
+      "storage_usage": "Uso aproximado de almacenamiento",
+      "local_data": "Datos locales guardados en IndexedDB",
+      "total_expenses": "{count} gastos totales",
+      "delete_data": "Borrar Datos",
+      "year": "Año",
+      "select_year": "Selecciona un año",
+      "month_optional": "Mes (Opcional)",
+      "entire_year": "Todo el año",
+      "select_year_to_delete": "Selecciona un año para borrar",
+      "delete_month_data": "Borrar datos de {month}",
+      "delete_year_data": "Borrar todo el año {year}",
+      "confirm_delete_title": "¿Borrar datos?",
+      "confirm_delete_month": "Esto eliminará todas las compras y tickets del mes de {month}. Esta acción es irreversible.",
+      "confirm_delete_year": "Esto eliminará todas las compras y tickets del año {year}. Esta acción es irreversible.",
+      "data_deleted": "Datos eliminados",
+      "tickets_title": "Tickets adjuntos",
+      "tickets_description": "Imágenes y PDF guardados en IndexedDB junto con el resto de datos locales.",
+      "tickets_count": "{count} tickets",
+      "remove_tickets": "Eliminar tickets",
+      "remove_tickets_for_selection": "Eliminar solo los tickets del periodo seleccionado",
+      "tickets_removed": "Tickets eliminados",
+      "confirm_remove_tickets_title": "¿Eliminar los tickets?",
+      "confirm_remove_tickets_all_desc": "Se eliminarán todos los archivos adjuntos de los gastos para liberar espacio de IndexedDB. Los gastos y sus datos ligeros se mantendrán en IndexedDB. Esta acción no se puede deshacer.",
+      "confirm_remove_tickets_selection_desc": "Se eliminarán los tickets adjuntos del periodo seleccionado para liberar espacio de IndexedDB. Los gastos y sus datos ligeros se mantendrán en IndexedDB. Esta acción no se puede deshacer.",
+      "legacy_title": "Datos antiguos en localStorage",
+      "legacy_description": "La migración a IndexedDB ya se ha realizado. Puedes eliminar esta copia antigua para liberar espacio del navegador.",
+      "legacy_keys": "{count} claves antiguas",
+      "clear_legacy": "Eliminar copia antigua",
+      "confirm_clear_legacy_title": "¿Eliminar la copia antigua?",
+      "confirm_clear_legacy_description": "Se eliminarán las claves antiguas de localStorage. Los datos actuales de IndexedDB se mantendrán.",
+      "legacy_cleared": "Copia antigua eliminada",
+      "storage_strategy": {
+        "storage_limit_title": "Persistencia en IndexedDB",
+        "storage_limit_description": "Cuánto llevo gastao guarda compras, gastos, configuración, cachés y tickets en una única base de datos IndexedDB.",
+        "active": "Activo",
+        "active_title": "Datos locales en IndexedDB",
+        "active_description": "Los tickets viven en una tabla separada dentro de la misma base de datos para no reescribir archivos grandes cada vez que cambia un gasto. Las copias de seguridad los hidratan al exportar datos.",
+        "app_state": "Datos principales",
+        "attachments": "Tickets",
+        "browser_usage": "Uso del navegador",
+        "browser_quota": "Cuota disponible"
+      }
+    },
+    "openai": {
+      "label": "Clave API de OpenAI",
+      "description": "Activa el análisis mejorado con IA de los tickets de gastos.",
+      "privacy": "Los tickets escaneados se enviarán a OpenAI para analizarlos. La clave se guarda solo en este dispositivo."
+    }
+  },
+  "home": {
+    "title": "Inicio",
+    "welcome": {
+      "title": "Bienvenido a",
+      "description": "Gestiona tus compras y gastos de supermercado de manera completamente local. Cuánto llevo gastao no guarda datos en ningún servidor y funciona completamente sin conexión a internet."
+    },
+    "alerts": {
+      "price_missing": {
+        "title": "Añade el precio de la dieta",
+        "description": "Configura el precio para poder calcular correctamente los totales y generar documentos."
+      }
+    },
+    "documents": {
+      "title": "Generar documentos",
+      "selected_month": "Mes seleccionado",
+      "services_count": "{count} servicios",
+      "diets_types": "Dietas: {full} completas · {half} medias",
+      "kilometers": "Kilómetros",
+      "missing_templates": "Se debe subir una plantilla mensual o por servicio desde Configuración."
+    },
+    "stats": {
+      "worked_hours": "Horas trabajadas",
+      "weekly_average": "Media semanal",
+      "weekly_average_subtitle": "Media de {weeks} semanas de {month}",
+      "service_average": "Media por servicio",
+      "service_average_subtitle": "Media basada en {count} servicios",
+      "services": "Servicios",
+      "diets": "Dietas",
+      "configured_prices": "Precios configurados",
+      "full": "Completa",
+      "half": "Media",
+      "kilometers": "Kilómetros",
+      "kilometers_average": "Media: {avg} km/servicio"
+    },
+    "wrapped": {
+      "annual_summary": "Resumen Anual",
+      "your_year": "Tu {year}",
+      "discover": "Descubre tus estadísticas"
+    },
+    "lunches": "Comidas: {count}",
+    "dinners": "Cenas: {count}",
+    "events_of_day": "📅 Eventos del día",
+    "all_day": "Todo el día",
+    "registered_services": "Servicios registrados"
+  },
+  "months": {
+    "0": "Todos",
+    "1": "Enero",
+    "2": "Febrero",
+    "3": "Marzo",
+    "4": "Abril",
+    "5": "Mayo",
+    "6": "Junio",
+    "7": "Julio",
+    "8": "Agosto",
+    "9": "Septiembre",
+    "10": "Octubre",
+    "11": "Noviembre",
+    "12": "Diciembre"
+  },
+  "weekdays": {
+    "1": "Lunes",
+    "2": "Martes",
+    "3": "Miércoles",
+    "4": "Jueves",
+    "5": "Viernes",
+    "6": "Sábado",
+    "7": "Domingo"
+  },
+  "privacy": {
+    "title": "Política de Privacidad",
+    "local_first": {
+      "title": "1. Ausencia de Servidores (Local-First)",
+      "p1": "Cuánto llevo gastao está diseñado con una filosofía <strong>Local-First</strong>. Esto significa que no disponemos de servidores centrales, bases de datos en la nube ni ningún sistema para recopilar, almacenar o procesar sus datos.",
+      "p2": "La totalidad de la información que introduce en la aplicación se almacena <strong>exclusivamente en su dispositivo</strong> (ordenador, tableta o móvil) utilizando las tecnologías del navegador (IndexedDB)."
+    },
+    "responsibility": {
+      "title": "2. Responsabilidad del Usuario y Seguridad",
+      "p1": "Dado que no tenemos acceso a sus datos, <strong>no podemos recuperarlos</strong> en caso de pérdida, robo del dispositivo o borrado accidental del navegador.",
+      "p2": "Por lo tanto, es su responsabilidad exclusiva:",
+      "li1": "Mantener la seguridad física y lógica de su dispositivo.",
+      "li2": "Realizar <strong>copias de seguridad</strong> periódicas (Configuración > Exportar Config/Datos).",
+      "li3": "Utilizar la opción de <strong>encriptación</strong> al exportar las copias de seguridad para proteger los datos sensibles en caso de compartir el archivo."
+    },
+    "stored_data": {
+      "title": "3. Datos Almacenados",
+      "p1": "La aplicación guarda localmente la siguiente información necesaria para su funcionamiento:",
+      "li1": "Datos de configuración y preferencias.",
+      "li2": "Registro de compras, desgloses y tickets escaneados.",
+      "li3": "Preferencias de configuración (tema, presupuesto).",
+      "li4": "Tokens de acceso o claves configuradas por el usuario (si aplica).",
+      "li5": "Claves opcionales (OpenAI Vision API)."
+    },
+    "third_party": {
+      "title": "4. Servicios de Terceros",
+      "p1": "Aunque Cuánto llevo gastao no tiene servidores propios, la aplicación puede conectarse directamente desde su navegador a servicios de terceros si activa estas funcionalidades:",
+      "google_calendar": {
+        "title": "Google Calendar API",
+        "description": "Se utiliza únicamente si conecta su calendario para leer eventos. La conexión se realiza directamente entre su navegador y Google."
+      },
+      "google_maps": {
+        "title": "Google Maps API",
+        "description": "Si configura su clave API, se utilizará para calcular distancias o ubicaciones."
+      }
+    },
+    "deletion": {
+      "title": "5. Eliminación de Datos",
+      "p1": "Tiene el control absoluto sobre sus datos. Puede eliminar toda la información almacenada por Cuánto llevo gastao en cualquier momento simplemente:",
+      "li1": "Utilizando la opción \"Borrar todos los datos\" en el apartado de mantenimiento de la Configuración.",
+      "li2": "O bien, limpiando los datos de sitios web (cookies y almacenamiento local) desde las opciones de su navegador."
+    },
+    "contact": {
+      "title": "6. Contacto",
+      "p1": "Si tiene dudas sobre esta política o el funcionamiento técnico de la aplicación, puede abrir una incidencia o discusión en el repositorio oficial de <a href=\"https://github.com/Redneck-Vibecoding/cuanto-llevo-gastao\" target=\"_blank\" class=\"text-primary-500 hover:underline\">GitHub</a>."
+    }
+  },
+  "terms": {
+    "title": "Condiciones Generales del Servicio",
+    "nature": {
+      "title": "1. Naturaleza del Servicio",
+      "p1": "<strong>Cuánto llevo gastao</strong> es un proyecto de software libre y de código abierto (<a href=\"https://github.com/Redneck-Vibecoding/cuanto-llevo-gastao\" target=\"_blank\" class=\"text-primary-500 hover:underline\">GitHub</a>) desarrollado y distribuido de manera totalmente gratuita y sin ánimo de lucro.",
+      "p2": "El objetivo de este software es proporcionar una herramienta de utilidad para el control inteligente de compras y gastos de supermercado, pero no constituye un servicio profesional ni comercial."
+    },
+    "beta": {
+      "title": "2. Estado de desarrollo (Beta)",
+      "p1": "Esta aplicación se encuentra actualmente en fase <strong>BETA</strong> y se considera una \"prueba de concepto\". Esto significa que el software está todavía en desarrollo activo, puede contener errores, funcionalidades incompletas o sufrir cambios significativos sin previo aviso."
+    },
+    "disclaimer": {
+      "title": "3. Exención de Garantías y Responsabilidad",
+      "p1": "El software se ofrece \"TAL CUAL\" (<strong>\"AS IS\"</strong>), sin ningún tipo de garantía, expresa o implícita, incluyendo, pero sin limitarse a, garantías de comerciabilidad, idoneidad para un propósito particular o no infracción.",
+      "p2": "En ningún caso los autores o titulares de los derechos de autor serán responsables de ninguna reclamación, daño u otra responsabilidad, ya sea en una acción contractual, agravio o de otro modo, que surja de, fuera de o en conexión con el software o el uso u otras relaciones con el software.",
+      "warning": "<strong>Importante:</strong> El usuario es el único responsable de la veracidad de los datos introducidos y de realizar copias de seguridad periódicas. Cuánto llevo gastao no guarda ningún dato en sus servidores y no se hace responsable de la pérdida de datos almacenados localmente en el dispositivo del usuario."
+    },
+    "privacy": {
+      "title": "4. Privacidad y Datos",
+      "p1": "Cuánto llevo gastao funciona bajo una filosofía <strong>Local-First</strong>. Todos los datos que introduzca (compras, tickets, presupuesto, datos personales) se guardan exclusivamente en su navegador (IndexedDB).",
+      "p2": "No se envía ninguna información a servidores de terceros, con la excepción de:",
+      "li1": "El uso de la API de OpenAI si decide usar la extracción inteligente de tickets con IA (la comunicación es directa entre su navegador y OpenAI).",
+      "li2": "El uso de la API de Google Maps si configura su clave para el autocompletado de ubicaciones de supermercados."
+    },
+    "license": {
+      "title": "5. Licencia",
+      "p1": "Este proyecto está licenciado bajo los términos de la licencia MIT. Eres libre de usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar y/o vender copias del software, siempre que se incluya el aviso de derechos de autor y permiso original."
+    }
+  },
+  "components": {
+    "header": {
+      "title": "LotoControl",
+      "beta": "PWA",
+      "home": "Inicio",
+      "expenses": "Boletos",
+      "settings": "Ajustes",
+      "help": "Ayuda",
+      "theme": "Tema",
+      "statistics": "Estadísticas"
+    },
+    "qr_modal": {
+      "title": "Código QR",
+      "description": "Escanea este código desde otro dispositivo para importar la compra.",
+      "generating": "Generando QR...",
+      "error": "No se ha podido generar el código QR",
+      "close": "Cerrar",
+      "share_title": "Compartir compra"
+    },
+    "qr_scanner": {
+      "title": "Escanear QR",
+      "description": "Enfoca el código QR dentro del recuadro para importar la compra.",
+      "loading": "Iniciando cámara...",
+      "errors": {
+        "permission": "Necesitas dar permiso de acceso a la cámara.",
+        "not_found": "No se ha encontrado ninguna cámara en este dispositivo.",
+        "ssl": "Esta página no se sirve a través de HTTPS (seguridad requerida).",
+        "in_use": "La cámara ya está en uso.",
+        "overconstrained": "Las cámaras instaladas no son adecuadas.",
+        "stream": "El navegador no soporta el acceso a la cámara.",
+        "unknown": "Error de cámara: {error}"
+      }
+    },
+    "pwa": {
+      "update_available": "Actualización disponible",
+      "new_version": "¡Nueva versión {version} disponible!",
+      "update_now": "Actualizar ahora",
+      "dismiss": "Ignorar",
+      "install": "Instalar App",
+      "install_description": "Instala la aplicación para acceder rápidamente y trabajar sin conexión."
+    },
+    "selectors": {
+      "search_municipality": "Buscar municipio...",
+      "select_municipality": "Selecciona municipio",
+      "search_province": "Buscar provincia...",
+      "select_province": "Selecciona provincia"
+    },
+    "expense_form": {
+      "description": "Descripción",
+      "description_placeholder": "Ej: Comida, peaje, combustible...",
+      "date": "Fecha y hora",
+      "amount": "Importe (€)",
+      "category": "Categoría",
+      "category_placeholder": "Selecciona una categoría",
+      "category_hint": "Solo los gastos de Dieta descuentan del balance; el resto se registran aparte.",
+      "ticket": "Ticket (opcional)",
+      "ticket_hint": "Adjunta una foto o un archivo del comprobante",
+      "ticket_step_title": "Empieza por el ticket",
+      "ticket_step_description": "Sube el comprobante y extrae los datos con IA antes de revisar el formulario.",
+      "ticket_upload": "Subir archivo",
+      "ticket_camera": "Hacer foto",
+      "ticket_remove": "Quitar el ticket",
+      "ticket_view": "Ver ticket",
+      "ticket_edit": "Recortar",
+      "ticket_crop_title": "Recorta el ticket",
+      "ticket_crop_hint": "Ajusta el encuadre del comprobante antes de guardarlo",
+      "ticket_crop_confirm": "Aplicar",
+      "ticket_grayscale": "Escala de grises",
+      "ticket_download": "Descargar",
+      "save": "Guardar compra",
+      "update": "Actualizar compra",
+      "validation": {
+        "description_required": "La descripción es obligatoria",
+        "date_required": "La fecha es obligatoria",
+        "amount_required": "El importe es obligatorio",
+        "amount_positive": "El importe debe ser superior a 0",
+        "category_required": "La categoría es obligatoria"
+      },
+      "alerts": {
+        "saved": "Compra guardada correctamente",
+        "updated": "Compra actualizada correctamente",
+        "save_error": "Error al guardar la compra",
+        "ticket_too_large": "El ticket es demasiado grande (máximo {size} MB)",
+        "ticket_invalid": "Formato de archivo no válido",
+        "ticket_error": "No se ha podido cargar el ticket",
+        "ocr_success": "Datos extraídos del ticket",
+        "ocr_empty": "No se han podido detectar datos en el ticket",
+        "ocr_error": "No se ha podido leer el ticket",
+        "location_detected": "Ubicación detectada",
+        "location_error": "No se ha podido detectar la ubicación",
+        "ticket_removed_for_space": "La compra se ha guardado, pero se ha eliminado el ticket adjunto porque el navegador no tenía espacio suficiente para guardarlo en IndexedDB. Puedes liberar espacio de IndexedDB desde Configuración."
+      },
+      "ticket_extract": "Extraer datos",
+      "ticket_extract_progress": "Extrayendo… {progress}%",
+      "ticket_extract_hint": "Lee el ticket y rellena automáticamente los campos vacíos (importe, fecha y descripción).",
+      "ocr_action": "Extraer datos del ticket",
+      "ocr_progress": "Leyendo ticket… {progress}%",
+      "ocr_hint": "Detecta automáticamente supermercado, fecha, importe y desglose de productos",
+      "location": "Ubicación (opcional)",
+      "location_placeholder": "Busca un lugar, dirección o zona...",
+      "location_searching": "Buscando ubicaciones…",
+      "location_autocomplete_error": "No se han podido cargar las sugerencias de Google Maps.",
+      "location_hint": "Se puede escribir manualmente, usar autocompletado de Google Maps o detectar la ubicación del dispositivo.",
+      "detect_location": "Detectar ubicación",
+      "ticket_extract_hint_ai": "Analiza el ticket con OpenAI para detectar con mayor precisión el importe, la fecha, la descripción, la categoría y la ubicación.",
+      "establishment": "Establecimiento / Supermercado",
+      "establishment_placeholder": "Ej: Mercadona, Carrefour, Lidl, Día...",
+      "items_title": "Desglose de productos",
+      "items_hint": "Añade los productos comprados para las estadísticas por categoría",
+      "add_item": "Añadir producto",
+      "item_name": "Producto",
+      "item_name_placeholder": "Nombre del producto",
+      "item_qty": "Cant.",
+      "item_price": "Coste (€)",
+      "item_category": "Categoría",
+      "items_sum": "Suma de productos",
+      "use_as_total": "Usar como total",
+      "items_total": "Total productos",
+      "total_calculated": "Total calculado: {amount} €",
+      "calculate_total": "Calcular total desde productos",
+      "no_items": "Sin desglose de productos todavía",
+      "items_count": "{count} productos detectados",
+      "persistent_category": "Asignación persistente de categoría",
+      "persistent_category_hint": "Recordar esta categoría para este producto en {supermarket}",
+      "persistent_category_saved": "Categoría persistente guardada para \"{product}\""
+    },
+    "expense_list": {
+      "title": "Gastos registrados",
+      "records_count": "{count} registros",
+      "description": "Consulta, edita o elimina los gastos existentes.",
+      "search_placeholder": "Buscar por descripción...",
+      "add": "Añadir gasto",
+      "empty": "Todavía no hay gastos registrados.",
+      "per_page": "{count} por página",
+      "all": "Todos",
+      "actions": "Acciones",
+      "date": "Fecha y hora",
+      "description_col": "Descripción",
+      "amount": "Importe",
+      "edit": "Editar",
+      "delete": "Eliminar",
+      "view_ticket": "Ver ticket",
+      "ticket_badge": "Ticket adjunto",
+      "import": "Importar",
+      "import_qr": "Importar gasto con QR",
+      "share_qr": "Compartir QR",
+      "qr_title": "Compartir gasto",
+      "modals": {
+        "edit_title": "Editar compra",
+        "edit_desc": "Actualiza los datos de la compra seleccionada",
+        "new_title": "Nueva compra",
+        "new_desc": "Rellena los datos de la compra o ticket",
+        "delete_title": "Eliminar compra",
+        "delete_desc": "¿Seguro que quieres eliminar esta compra? Esta acción no se puede deshacer.",
+        "deleted": "Compra eliminada",
+        "import_success": "Compra importada correctamente",
+        "import_error_title": "Error en la importación",
+        "import_error": "El código QR no contiene una compra válida."
+      },
+      "selected_count": "{count} seleccionados",
+      "share_selected": "Compartir selección",
+      "clear_selection": "Deshacer selección",
+      "select_all": "Seleccionar todo",
+      "select_row": "Seleccionar gasto",
+      "share_selected_title": "{count} gastos",
+      "share_success": "Gastos compartidos correctamente",
+      "share_error": "No se han podido compartir los gastos",
+      "location": "Ubicación",
+      "location_filter_placeholder": "Filtrar por ciudad, provincia o zona..."
+    }
+  },
+  "help": {
+    "index": {
+      "title": "Ayuda y Documentación",
+      "description": "Información sobre la aplicación y guía de referencia.",
+      "topics_title": "Temas de Ayuda",
+      "search_placeholder": "Filtrar temas...",
+      "no_results": "No se han encontrado temas que coincidan con la búsqueda.",
+      "clear_filter": "Limpiar filtro",
+      "legal_section": "Legal",
+      "terms_desc": "Información legal, garantías y licencia de uso.",
+      "privacy_desc": "Cómo gestionamos (y no guardamos) tus datos."
+    },
+    "topics": {
+      "about": {
+        "title": "Sobre Cuánto llevo gastao",
+        "description": "Filosofía local, privacidad y cómo funcionan tus datos."
+      },
+      "pwa": {
+        "title": "Instalación (PWA)",
+        "description": "Cómo instalar la aplicación en tu móvil u ordenador."
+      },
+      "maps": {
+        "title": "API de Google Maps",
+        "description": "Autocompletado de supermercados y geolocalización."
+      },
+      "backups": {
+        "title": "Copias de Seguridad",
+        "description": "Cómo exportar, importar y proteger tus datos."
+      }
+    }
+  },
+  "layout": {
+    "footer": {
+      "rights": "Todos los derechos reservados.",
+      "terms": "Condiciones Generales",
+      "privacy": "Política de Privacidad"
+    }
+  },
+  "expenses": {
+    "title": "Gastos",
+    "subtitle": "Gestiona tus gastos y consulta el balance neto.",
+    "list_title": "Gastos",
+    "list_description": "Gastos de {month}",
+    "list_description_day": "Gastos del {day}",
+    "calendar_title": "Calendario de gastos",
+    "all_categories": "Todas las categorías",
+    "categories": {
+      "carnes": "Carnes",
+      "pescados": "Pescados y Mariscos",
+      "charcuteria": "Charcutería",
+      "verduras": "Verduras y Hortalizas",
+      "frutas": "Frutas",
+      "quesos": "Quesos",
+      "lacteos_huevos": "Lácteos y Huevos",
+      "panes_tostadas": "Panes y Tostadas",
+      "desayuno_dulces_cafe": "Desayuno, Dulces y Café",
+      "arroz_pastas_legumbres": "Arroz, Pastas y Legumbres",
+      "caldos_sopas_pures": "Caldos, Sopas y Purés",
+      "aperitivos_frutos_secos": "Aperitivos y Frutos Secos",
+      "congelados": "Congelados",
+      "helados": "Helados",
+      "bebidas": "Bebidas",
+      "aceites_condimentos": "Aceites, Salsas y Condimentos",
+      "conservas": "Conservas",
+      "limpieza": "Droguería y Limpieza",
+      "cuidado_personal": "Higiene y Cuidado Personal",
+      "mascotas": "Mascotas",
+      "hogar": "Bazar y Hogar",
+      "otros": "Otros",
+      "vivienda": "Vivienda (Alquiler / Hipoteca)",
+      "suministros": "Suministros (Luz, Agua, Gas)",
+      "alimentacion": "Supermercado y Alimentación",
+      "transporte": "Transporte y Vehículo",
+      "telecomunicaciones": "Internet, Teléfono y TV",
+      "salud": "Salud y Farmacia",
+      "ropa_calzado": "Ropa y Calzado",
+      "ocio_restauracion": "Ocio y Restauración",
+      "suscripciones": "Suscripciones y Streaming",
+      "educacion": "Educación y Formación",
+      "seguros": "Seguros y Finanzas",
+      "impuestos": "Impuestos y Tasas",
+      "viajes": "Viajes y Vacaciones",
+      "frescos": "Frescos (Fruta, Verdura, Carnes, Pescado)",
+      "farmacia": "Farmacia",
+      "diet": "Alimentación",
+      "parking": "Parking",
+      "gas": "Gasolina",
+      "tolls": "Peajes",
+      "other": "Otros"
+    },
+    "stats": {
+      "count": "{count} compras",
+      "diet_total": "Total gastado",
+      "other_total": "Número de compras",
+      "other_total_subtitle": "En el periodo seleccionado",
+      "daily_average": "Gasto medio",
+      "daily_average_subtitle": "Media por ticket/compra",
+      "net_balance": "Días con compras",
+      "net_balance_subtitle": "{days} días con compras registradas",
+      "by_category": "Por categoría"
+    },
+    "list_description_range": "Gastos del {start} al {end}"
+  },
+  "dashboard": {
+    "title": "¿Cuánto llevo gastao?",
+    "subtitle": "Control inteligente de compras de supermercado",
+    "spent_this_month": "Gastado este mes",
+    "monthly_budget": "Presupuesto mensual",
+    "budget_remaining": "Te quedan {amount} €",
+    "budget_exceeded": "Superado en {amount} €",
+    "budget_pct": "{pct}% gastado",
+    "edit_budget": "Ajustar presupuesto",
+    "set_budget_title": "Presupuesto mensual",
+    "set_budget_description": "Configura tu objetivo de gasto mensual para compras y supermercado.",
+    "budget_input_label": "Presupuesto mensual (€)",
+    "new_expense": "Nueva compra",
+    "scan_ticket": "Escanear ticket",
+    "categories_overview": "Gasto por categorías este mes",
+    "recent_purchases": "Últimas compras del mes",
+    "no_purchases_month": "No hay compras registradas en este mes todavía.",
+    "view_all": "Ver todas las compras",
+    "daily_average": "Gasto medio diario",
+    "total_tickets": "Tickets este mes",
+    "avg_ticket": "Gasto medio por compra",
+    "items_breakdown": "Desglose de productos",
+    "items_count": "{count} productos"
+  },
+  "statistics": {
+    "title": "Estadísticas de compras",
+    "subtitle": "Análisis detallado de tus gastos por categoría de producto y supermercado",
+    "all_months": "Todos los meses",
+    "total_spent": "Total gastado",
+    "avg_ticket": "Ticket medio",
+    "purchases_count": "{count} compras",
+    "by_category": "Gasto por categoría de productos",
+    "by_supermarket": "Gasto por supermercado",
+    "no_data": "No hay datos de compras para este periodo.",
+    "top_products": "Productos más frecuentes"
+  },
+  "export_widget": {
+    "title": "Exportar gastos",
+    "subtitle": "Descarga tus gastos en formato PDF, CSV o archivo comprimido ZIP",
+    "badge": "PDF · CSV · ZIP",
+    "period_label": "Seleccionar periodo",
+    "format_label": "Formato de exportación",
+    "formats": {
+      "pdf": "Solo PDF",
+      "pdf_desc": "Informe formateado",
+      "csv": "Solo CSV",
+      "csv_desc": "Hoja de cálculo Excel",
+      "zip": "Todo en ZIP",
+      "zip_desc": "PDF + CSV + Tickets"
+    },
+    "periods": {
+      "current_month": "Este mes",
+      "previous_month": "Mes anterior",
+      "current_quarter": "Este trimestre",
+      "current_semester": "Este semestre",
+      "previous_semester": "Semestre anterior",
+      "current_year": "Este año",
+      "previous_year": "Año anterior",
+      "all": "Todo el historial",
+      "custom": "Periodo personalizado..."
+    },
+    "custom_from": "Desde",
+    "custom_to": "Hasta",
+    "invalid_range": "La fecha de inicio no puede ser posterior a la fecha final.",
+    "period_preview": "Periodo:",
+    "expenses_count": "{count} gastos encontrados",
+    "total_amount": "Total: {amount} €",
+    "target_file": "Archivo:",
+    "includes_info": "Incluye informe en PDF, hoja de cálculo CSV y comprobantes adjuntos",
+    "no_expenses": "No hay gastos registrados en este periodo.",
+    "export_btn_pdf": "Descargar informe PDF",
+    "export_btn_csv": "Descargar hoja de cálculo CSV",
+    "export_btn_zip": "Descargar archivo ZIP",
+    "exporting_pdf": "Generando informe PDF...",
+    "exporting_csv": "Generando CSV...",
+    "exporting_zip": "Generando archivo ZIP...",
+    "success_toast_pdf": "Informe PDF descargado con éxito",
+    "success_toast_csv": "Archivo CSV descargado con éxito",
+    "success_toast_zip": "Archivo ZIP descargado con éxito",
+    "error_toast": "Error al generar la exportación"
+  }
+}
+

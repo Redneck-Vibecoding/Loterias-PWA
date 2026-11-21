@@ -1,0 +1,642 @@
+{
+  "common": {
+    "firstName": "Nom",
+    "lastName": "Cognoms",
+    "nationalId": "DNI",
+    "email": "Correu electrònic",
+    "save": "Desar",
+    "cancel": "Cancel·lar",
+    "delete": "Esborrar",
+    "confirm": "Confirmar",
+    "back": "Enrere",
+    "next": "Següent",
+    "finish": "Finalitzar",
+    "loading": "Carregant...",
+    "error": "Error",
+    "success": "Configuració guardada",
+    "export": "Exportar",
+    "import": "Importar",
+    "disconnect": "Desconnectar",
+    "all": "Tots",
+    "current_month": "Mes actual",
+    "all_months": "Tots els mesos"
+  },
+  "errors": {
+    "share_not_allowed": "Compartició no permesa, descarregant...",
+    "share_not_supported": "El teu dispositiu no suporta compartir aquest fitxer, descarregant...",
+    "export_failed": "No s'ha pogut exportar",
+    "no_data": "No hi ha dades per exportar",
+    "select_month_export": "Selecciona un mes per exportar"
+  },
+  "success": {},
+  "settings": {
+    "title": "Configuració",
+    "description": "Gestiona les teves dades personals i preferències de l'aplicació.",
+    "save": "Desar configuració",
+    "share_app": "Compartir app",
+    "share_app_title": "Cuánto llevo gastao",
+    "share_app_text": "Control intel·ligent de compres i despeses de supermercat",
+    "share_app_success": "App compartida correctament",
+    "share_app_copied": "Enllaç de l'app copiat al porta-retalls",
+    "language": {
+      "title": "Idioma",
+      "description": "Selecciona l'idioma de l'aplicació."
+    },
+    "budget": {
+      "title": "Pressupost",
+      "description": "Configura el teu pressupost mensual.",
+      "label": "Pressupost mensual",
+      "help": "Aquest import s'utilitzarà per calcular els percentatges de despesa a la portada."
+    },
+    "backup": {
+      "title": "Còpies de seguretat",
+      "description": "Exporta i importa les teves dades per no perdre res.",
+      "export_config": "Exportar Configuració",
+      "import_config": "Importar Backup",
+      "export_data": "Exportar Dades",
+      "select_year": "Selecciona any",
+      "select_month": "Selecciona mes",
+      "export_config_btn": "Exportar Config",
+      "export_config_description": "Guarda el pressupost, les claus API i les opcions de l'aplicació.",
+      "export_data_description": "Guarda el registre de compres, desglossaments i tiquets.",
+      "export_data_btn": "Exportar Dades",
+      "import_config_description": "Restaura una configuració o dades des d'un fitxer `.json` anterior.",
+      "select_file": "Selecciona fitxer",
+      "change_file": "Canviar fitxer",
+      "search_file": "Buscar fitxer...",
+      "process_import": "Processar Importació",
+      "encrypt": "Encriptar còpia de seguretat",
+      "encrypt_help": "Protegeix el fitxer amb una contrasenya.",
+      "password": "Contrasenya",
+      "password_help": "S'utilitza per protegir el fitxer exportat.",
+      "export_btn": "Descarregar Backup",
+      "share_btn": "Compartir Backup",
+      "import_placeholder": "Selecciona un fitxer .json...",
+      "imported": "Backup importat",
+      "updated_data_config": "S'han actualitzat les dades i la configuració",
+      "updated_data": "S'han actualitzat les dades",
+      "updated_config": "S'ha actualitzat la configuració",
+      "enter_password": "Introdueix la contrasenya per importar",
+      "select_file_warning": "Selecciona un fitxer de backup",
+      "malformed": "Backup malformat o buit",
+      "import_config_title": "Importar Configuració",
+      "import_config_confirm": "Això sobreescriurà la configuració actual. Vols continuar?",
+      "import_data_title": "Importar Dades",
+      "overwrite_month": "Estàs a punt de sobreescriure les dades del mes de {month}. Vols continuar?",
+      "overwrite_year": "Estàs a punt de sobreescriure les dades de l'any {year}. La resta d'anys es mantindran intactes. Vols continuar?",
+      "overwrite_all": "Estàs a punt de sobreescriure TOTES les compres registrades. Aquesta acció no es pot desfer. Vols continuar?",
+      "confirm_import": "Confirmar i Importar",
+      "import_error": "Error en importar (contrasenya incorrecta?)"
+    },
+    "maintenance": {
+      "title": "Manteniment",
+      "description": "Opcions avançades de gestió de dades.",
+      "delete_data": "Esborrar Dades",
+      "storage_usage": "Ús aproximat d'emmagatzematge",
+      "local_data": "Dades locals guardades a IndexedDB",
+      "total_expenses": "{count} despeses totals",
+      "year": "Any",
+      "select_year": "Selecciona un any",
+      "month_optional": "Mes (Opcional)",
+      "entire_year": "Tot l'any",
+      "select_year_to_delete": "Selecciona un any per esborrar",
+      "delete_month_data": "Esborrar dades de {month}",
+      "delete_year_data": "Esborrar tot l'any {year}",
+      "confirm_delete_title": "Esborrar dades?",
+      "confirm_delete_month": "Això eliminarà totes les compres i tiquets del mes de {month}. Aquesta acció és irreversible.",
+      "confirm_delete_year": "Això eliminarà totes les compres i tiquets de l'any {year}. Aquesta acció és irreversible.",
+      "data_deleted": "Dades eliminades",
+      "tickets_title": "Tiquets adjunts",
+      "tickets_description": "Imatges i PDF guardats a IndexedDB juntament amb la resta de dades locals.",
+      "tickets_count": "{count} tiquets",
+      "remove_tickets": "Eliminar tiquets",
+      "remove_tickets_for_selection": "Eliminar només els tiquets del període seleccionat",
+      "tickets_removed": "Tiquets eliminats",
+      "confirm_remove_tickets_title": "Eliminar els tiquets?",
+      "confirm_remove_tickets_all_desc": "S'eliminaran tots els fitxers adjunts de les despeses per alliberar espai d'IndexedDB. Les despeses i les seves dades lleugeres es mantindran a IndexedDB. Aquesta acció no es pot desfer.",
+      "confirm_remove_tickets_selection_desc": "S'eliminaran els tiquets adjunts del període seleccionat per alliberar espai d'IndexedDB. Les despeses i les seves dades lleugeres es mantindran a IndexedDB. Aquesta acció no es pot desfer.",
+      "legacy_title": "Dades antigues a localStorage",
+      "legacy_description": "La migració a IndexedDB ja s'ha fet. Pots eliminar aquesta còpia antiga per alliberar espai del navegador.",
+      "legacy_keys": "{count} claus antigues",
+      "clear_legacy": "Eliminar còpia antiga",
+      "confirm_clear_legacy_title": "Eliminar la còpia antiga?",
+      "confirm_clear_legacy_description": "S'eliminaran les claus antigues de localStorage. Les dades actuals d'IndexedDB es mantindran.",
+      "legacy_cleared": "Còpia antiga eliminada",
+      "storage_strategy": {
+        "storage_limit_title": "Persistència a IndexedDB",
+        "storage_limit_description": "Cuánto llevo gastao desa compres, despeses, configuració, memòries cau i tiquets en una única base de dades IndexedDB.",
+        "active": "Actiu",
+        "active_title": "Dades locals a IndexedDB",
+        "active_description": "Els tiquets viuen en una taula separada dins la mateixa base de dades per no reescriure fitxers grans cada vegada que canvia una despesa. Les còpies de seguretat els hidraten quan exportes dades.",
+        "app_state": "Dades principals",
+        "attachments": "Tiquets",
+        "browser_usage": "Ús del navegador",
+        "browser_quota": "Quota disponible"
+      }
+    },
+    "openai": {
+      "label": "Clau API d’OpenAI",
+      "description": "Activa l’anàlisi millorada amb IA dels tiquets de despeses.",
+      "privacy": "Els tiquets escanejats s’enviaran a OpenAI per analitzar-los. La clau es desa només en aquest dispositiu."
+    }
+  },
+  "home": {
+    "welcome": {
+      "title": "Benvingut a",
+      "description": "Gestiona les teues compres i despeses de supermercat de manera completament local. Cuánto llevo gastao no guarda dades a cap servidor i funciona completament sense connexió a internet."
+    },
+    "alerts": {
+      "price_missing": {
+        "title": "Afegeix el preu de la dieta",
+        "description": "Configura el preu per poder calcular correctament els totals i generar documents."
+      }
+    },
+    "documents": {
+      "title": "Generar documents",
+      "selected_month": "Mes seleccionat",
+      "services_count": "{count} serveis",
+      "diets_types": "Dietes: {full} completes · {half} mitges",
+      "kilometers": "Kilòmetres",
+      "missing_templates": "S'ha de pujar una plantilla mensual o per servei des de Configuració."
+    },
+    "stats": {
+      "worked_hours": "Hores treballades",
+      "weekly_average": "Mitjana setmanal",
+      "weekly_average_subtitle": "Mitjana de {weeks} setmanes de {month}",
+      "service_average": "Mitjana per servei",
+      "service_average_subtitle": "Mitjana basada en {count} serveis",
+      "services": "Serveis",
+      "diets": "Dietes",
+      "configured_prices": "Preus configurats",
+      "full": "Completa",
+      "half": "Mitja",
+      "kilometers": "Kilòmetres",
+      "kilometers_average": "Mitjana: {avg} km/servei"
+    },
+    "wrapped": {
+      "annual_summary": "Resum Anual",
+      "your_year": "El teu {year}",
+      "discover": "Descobreix les teues estadístiques"
+    },
+    "lunches": "Dinars: {count}",
+    "dinners": "Sopars: {count}",
+    "events_of_day": "📅 Esdeveniments del dia",
+    "all_day": "Tot el dia"
+  },
+  "months": {
+    "0": "Tots",
+    "1": "Gener",
+    "2": "Febrer",
+    "3": "Març",
+    "4": "Abril",
+    "5": "Maig",
+    "6": "Juny",
+    "7": "Juliol",
+    "8": "Agost",
+    "9": "Setembre",
+    "10": "Octubre",
+    "11": "Novembre",
+    "12": "Desembre"
+  },
+  "weekdays": {
+    "1": "Dilluns",
+    "2": "Dimarts",
+    "3": "Dimecres",
+    "4": "Dijous",
+    "5": "Divendres",
+    "6": "Dissabte",
+    "7": "Diumenge"
+  },
+  "privacy": {
+    "title": "Política de Privacitat",
+    "local_first": {
+      "title": "1. Absència de Servidors (Local-First)",
+      "p1": "Cuánto llevo gastao està dissenyat amb una filosofia <strong>Local-First</strong>. Això significa que no disposem de servidors centrals, bases de dades al núvol ni cap sistema per recopilar, emmagatzemar o processar les vostres dades.",
+      "p2": "La totalitat de la informació que introduïu a l'aplicació s'emmagatzema <strong>exclusivament al vostre dispositiu</strong> (ordinador, tauleta o mòbil) utilitzant les tecnologies del navegador (IndexedDB)."
+    },
+    "responsibility": {
+      "title": "2. Responsabilitat de l'Usuari i Seguretat",
+      "p1": "Com que no tenim accés a les vostres dades, <strong>no podem recuperar-les</strong> en cas de pèrdua, robatori del dispositiu o esborrat accidental del navegador.",
+      "p2": "Per tant, és la vostra responsabilitat exclusiva:",
+      "li1": "Mantenir la seguretat física i lògica del vostre dispositiu.",
+      "li2": "Realitzar <strong>còpies de seguretat</strong> periòdiques (Configuració > Exportar Config/Dades).",
+      "li3": "Utilitzar l'opció d'<strong>encriptació</strong> en exportar les còpies de seguretat per protegir les dades sensibles en cas de compartir el fitxer."
+    },
+    "stored_data": {
+      "title": "3. Dades Emmagatzemades",
+      "p1": "L'aplicació guarda localment la següent informació necessària per al seu funcionament:",
+      "li1": "Dades de configuració i preferències.",
+      "li2": "Registre de compres, desglossaments i tiquets escanejats.",
+      "li3": "Preferències de configuració (tema, pressupost).",
+      "li4": "Tokens d'accés o claus configurades per l'usuari (si s'escau).",
+      "li5": "Claus opcionals (OpenAI Vision API)."
+    },
+    "third_party": {
+      "title": "4. Serveis de Tercers",
+      "p1": "Tot i que Cuánto llevo gastao no té servidors propis, l'aplicació pot connectar-se directament des del vostre navegador a serveis de tercers si activeu aquestes funcionalitats:",
+      "google_calendar": {
+        "title": "Google Calendar API",
+        "description": "S'utilitza únicament si connecteu el vostre calendari per llegir esdeveniments. La connexió es fa directament entre el vostre navegador i Google."
+      },
+      "google_maps": {
+        "title": "Google Maps API",
+        "description": "Si configureu la vostra clau API, s'utilitzarà per calcular distàncies o ubicacions."
+      }
+    },
+    "deletion": {
+      "title": "5. Eliminació de Dades",
+      "p1": "Teniu el control absolut sobre les vostres dades. Podeu eliminar tota la informació emmagatzemada per Cuánto llevo gastao en qualsevol moment simplement:",
+      "li1": "Utilitzant l'opció \"Esborrar totes les dades\" a l'apartat de manteniment de la Configuració.",
+      "li2": "O bé, netejant les dades de llocs web (cookies i emmagatzematge local) des de les opcions del vostre navegador."
+    },
+    "contact": {
+      "title": "6. Contacte",
+      "p1": "Si teniu dubtes sobre aquesta política o el funcionament tècnic de l'aplicació, podeu obrir una incidència o discussió al repositori oficial de <a href=\"https://github.com/Redneck-Vibecoding/cuanto-llevo-gastao\" target=\"_blank\" class=\"text-primary-500 hover:underline\">GitHub</a>."
+    }
+  },
+  "terms": {
+    "title": "Condicions Generals del Servei",
+    "nature": {
+      "title": "1. Naturalesa del Servei",
+      "p1": "<strong>Cuánto llevo gastao</strong> és un projecte de programari lliure i de codi obert (<a href=\"https://github.com/Redneck-Vibecoding/cuanto-llevo-gastao\" target=\"_blank\" class=\"text-primary-500 hover:underline\">GitHub</a>) desenvolupat i distribuït de manera totalment gratuïta i sense cap ànim de lucre.",
+      "p2": "L'objectiu d'aquest programari és proporcionar una eina d'utilitat per al control intel·ligent de compres i despeses de supermercat, però no constitueix un servei professional ni comercial."
+    },
+    "beta": {
+      "title": "2. Estat de desenvolupament (Beta)",
+      "p1": "Aquesta aplicació es troba actualment en fase <strong>BETA</strong> i es considera una \"prova de concepte\". Això significa que el programari està encara en desenvolupament actiu, pot contenir errors, funcionalitats incompletes o patir canvis significatius sense previ avís."
+    },
+    "disclaimer": {
+      "title": "3. Exempció de Garanties i Responsabilitat",
+      "p1": "El programari s'ofereix \"TAL QUAL\" (<strong>\"AS IS\"</strong>), sense cap mena de garantia, expressa o implícita, incloent-hi, però sense limitar-se a, garanties de mercantilitat, idoneïtat per a un propòsit particular o no infracció.",
+      "p2": "En cap cas els autors o titulars dels drets d'autor seran responsables de cap reclamació, dany o altra responsabilitat, ja sigui en una acció contractual, greuge o d'una altra manera, que sorgeixi de, fora de o en connexió amb el programari o l'ús o altres relacions amb el programari.",
+      "warning": "<strong>Important:</strong> L'usuari és l'únic responsable de la veracitat de les dades introduïdes i de realitzar còpies de seguretat periòdiques. Cuánto llevo gastao no guarda cap dada als seus servidors i no es fa responsable de la pèrdua de dades emmagatzemades localment al dispositiu de l'usuari."
+    },
+    "privacy": {
+      "title": "4. Privacitat i Dades",
+      "p1": "Cuánto llevo gastao funciona sota una filosofia <strong>Local-First</strong>. Totes les dades que introduïu (compres, tiquets, pressupost, dades personals) es guarden exclusivament al vostre navegador (IndexedDB).",
+      "p2": "No s'envia cap informació a servidors de tercers, amb l'excepció de:",
+      "li1": "L'ús de l'API d'OpenAI si decideix utilitzar l'extracció intel·ligent de tiquets amb IA (la comunicació és directa entre el seu navegador i OpenAI).",
+      "li2": "L'ús de l'API de Google Maps si configura la seva clau per a l'autocompletat d'ubicacions de supermercats."
+    },
+    "license": {
+      "title": "5. Llicència",
+      "p1": "Aquest projecte està llicenciat sota els termes de la llicència MIT. Sou lliures d'utilitzar, copiar, modificar, fusionar, publicar, distribuir, subllicenciar i/o vendre còpies del programari, sempre que s'inclogui l'avís de drets d'autor i permís original."
+    }
+  },
+  "components": {
+    "header": {
+      "title": "Quant porto gastat",
+      "beta": "Beta",
+      "home": "Inici",
+      "expenses": "Compres i Tiquets",
+      "settings": "Configuració",
+      "help": "Ajuda",
+      "theme": "Tema",
+      "statistics": "Estadístiques"
+    },
+    "qr_modal": {
+      "title": "Codi QR",
+      "description": "Escaneja aquest codi des d'un altre dispositiu per importar la compra.",
+      "generating": "Generant QR...",
+      "error": "No s'ha pogut generar el codi QR",
+      "close": "Tancar",
+      "share_title": "Compartir compra"
+    },
+    "qr_scanner": {
+      "title": "Escanejar QR",
+      "description": "Enfoca el codi QR dins del requadre per importar la compra.",
+      "loading": "Iniciant càmera...",
+      "errors": {
+        "permission": "Necessites donar permís d'accés a la càmera.",
+        "not_found": "No s'ha trobat cap càmera en aquest dispositiu.",
+        "ssl": "Aquesta pàgina no es serveix a través de HTTPS (seguretat requerida).",
+        "in_use": "La càmera ja està en ús.",
+        "overconstrained": "Les càmeres instal·lades no són adequades.",
+        "stream": "El navegador no suporta l'accés a la càmera.",
+        "unknown": "Error de càmera: {error}"
+      }
+    },
+    "pwa": {
+      "update_available": "Actualització disponible",
+      "new_version": "Nova versió {version} disponible!",
+      "update_now": "Actualitzar ara",
+      "dismiss": "Ignorar",
+      "install": "Instal·lar App",
+      "install_description": "Instal·la l'aplicació per accedir-hi ràpidament i treballar sense connexió."
+    },
+    "selectors": {
+      "search_municipality": "Buscar municipi...",
+      "select_municipality": "Selecciona municipi",
+      "search_province": "Buscar província...",
+      "select_province": "Selecciona província"
+    },
+    "expense_form": {
+      "description": "Descripció",
+      "description_placeholder": "Ex: Dinar, peatge, combustible...",
+      "date": "Data i hora",
+      "amount": "Import (€)",
+      "category": "Categoria",
+      "category_placeholder": "Selecciona una categoria",
+      "category_hint": "Tria la categoria de supermercat per a les estadístiques i el pressupost.",
+      "ticket": "Tiquet (opcional)",
+      "ticket_hint": "Adjunta una foto o un fitxer del comprovant",
+      "ticket_step_title": "Comença pel tiquet",
+      "ticket_step_description": "Puja el comprovant i extreu les dades amb IA abans de revisar el formulari.",
+      "ticket_upload": "Pujar fitxer",
+      "ticket_camera": "Fer foto",
+      "ticket_remove": "Treure el tiquet",
+      "ticket_view": "Veure tiquet",
+      "ticket_edit": "Retallar",
+      "ticket_crop_title": "Retalla el tiquet",
+      "ticket_crop_hint": "Ajusta l'enquadrament del comprovant abans de desar-lo",
+      "ticket_crop_confirm": "Aplicar",
+      "ticket_grayscale": "Escala de grisos",
+      "ticket_download": "Descarregar",
+      "save": "Desar compra",
+      "update": "Actualitzar compra",
+      "validation": {
+        "description_required": "La descripció és obligatòria",
+        "date_required": "La data és obligatòria",
+        "amount_required": "L'import és obligatori",
+        "amount_positive": "L'import ha de ser superior a 0",
+        "category_required": "La categoria és obligatòria"
+      },
+      "alerts": {
+        "saved": "Compra desada correctament",
+        "updated": "Compra actualitzada correctament",
+        "save_error": "Error desant la compra",
+        "ticket_too_large": "El tiquet és massa gran (màxim {size} MB)",
+        "ticket_invalid": "Format de fitxer no vàlid",
+        "ticket_error": "No s'ha pogut carregar el tiquet",
+        "ocr_success": "Dades extretes del tiquet",
+        "ocr_empty": "No s'han pogut detectar dades al tiquet",
+        "ocr_error": "No s'ha pogut llegir el tiquet",
+        "location_detected": "Ubicació detectada",
+        "location_error": "No s’ha pogut detectar la ubicació",
+        "ticket_removed_for_space": "La compra s'ha desat, però s'ha eliminat el tiquet adjunt perquè el navegador no tenia prou espai per guardar-lo a IndexedDB. Pots alliberar espai d'IndexedDB des de Configuració."
+      },
+      "ticket_extract": "Extreure dades",
+      "ticket_extract_progress": "Extraient… {progress}%",
+      "ticket_extract_hint": "Llegeix el tiquet i omple els camps buits automàticament (import, data i descripció).",
+      "ocr_action": "Extreure dades del tiquet",
+      "ocr_progress": "Llegint tiquet… {progress}%",
+      "ocr_hint": "Detecta automàticament supermercat, data, import i desglossament de productes",
+      "location": "Ubicació (opcional)",
+      "location_placeholder": "Cerca un lloc, adreça o zona...",
+      "location_searching": "Cercant ubicacions…",
+      "location_autocomplete_error": "No s’han pogut carregar els suggeriments de Google Maps.",
+      "location_hint": "Es pot escriure manualment, usar autocompletat de Google Maps o detectar la ubicació del dispositiu.",
+      "detect_location": "Detectar ubicació",
+      "ticket_extract_hint_ai": "Analitza el tiquet amb OpenAI per detectar amb més precisió l’import, la data, la descripció, la categoria i la ubicació.",
+      "establishment": "Establiment / Supermercat",
+      "establishment_placeholder": "Ex: Mercadona, Carrefour, Lidl, Día...",
+      "items_title": "Desglossament de productes",
+      "items_hint": "Afegeix els productes per a les estadístiques per categoria",
+      "add_item": "Afegir producte",
+      "item_name": "Producte",
+      "item_name_placeholder": "Nom del producte",
+      "item_qty": "Quant.",
+      "item_price": "Cost (€)",
+      "item_category": "Categoria",
+      "items_sum": "Suma de productes",
+      "use_as_total": "Utilitzar com a total",
+      "items_total": "Total productes",
+      "total_calculated": "Total calculat: {amount} €",
+      "calculate_total": "Calcular total des dels productes",
+      "no_items": "Sense desglossament de productes encara",
+      "items_count": "{count} productes detectats",
+      "persistent_category": "Assignació persistent de categoria",
+      "persistent_category_hint": "Recorda aquesta categoria per a aquest producte a {supermarket}",
+      "persistent_category_saved": "Categoria persistent desada per a \"{product}\""
+    },
+    "expense_list": {
+      "title": "Despeses registrades",
+      "records_count": "{count} registres",
+      "description": "Consulta, edita o esborra les despeses existents.",
+      "search_placeholder": "Buscar per descripció...",
+      "add": "Afegir despesa",
+      "empty": "Encara no hi ha despeses registrades.",
+      "per_page": "{count} per pàgina",
+      "all": "Totes",
+      "actions": "Accions",
+      "date": "Data i hora",
+      "description_col": "Descripció",
+      "amount": "Import",
+      "edit": "Editar",
+      "delete": "Eliminar",
+      "view_ticket": "Veure tiquet",
+      "ticket_badge": "Tiquet adjunt",
+      "import": "Importar",
+      "import_qr": "Importar despesa amb QR",
+      "share_qr": "Compartir QR",
+      "qr_title": "Compartir despesa",
+      "modals": {
+        "edit_title": "Editar compra",
+        "edit_desc": "Actualitza les dades de la compra seleccionada",
+        "new_title": "Nova compra",
+        "new_desc": "Ompli les dades de la compra o tiquet",
+        "delete_title": "Eliminar compra",
+        "delete_desc": "Estàs segur que vols eliminar aquesta compra? Aquesta acció no es pot desfer.",
+        "deleted": "Compra eliminada",
+        "import_success": "Compra importada correctament",
+        "import_error_title": "Error en la importació",
+        "import_error": "El codi QR no conté una compra vàlida."
+      },
+      "selected_count": "{count} seleccionats",
+      "share_selected": "Compartir selecció",
+      "clear_selection": "Desfer selecció",
+      "select_all": "Seleccionar tot",
+      "select_row": "Seleccionar despesa",
+      "share_selected_title": "{count} despeses",
+      "share_success": "Despeses compartides correctament",
+      "share_error": "No s'han pogut compartir les despeses",
+      "location": "Ubicació",
+      "location_filter_placeholder": "Filtrar per ciutat, província o zona..."
+    }
+  },
+  "help": {
+    "index": {
+      "title": "Ajuda i Documentació",
+      "description": "Informació sobre l'aplicació i guia de referència.",
+      "topics_title": "Temes d'Ajuda",
+      "search_placeholder": "Filtrar temes...",
+      "no_results": "No s'han trobat temes que coincideixin amb la cerca.",
+      "clear_filter": "Netejar filtre",
+      "legal_section": "Legal",
+      "terms_desc": "Informació legal, garanties i llicència d'ús.",
+      "privacy_desc": "Com gestionem (i no guardem) les teves dades."
+    },
+    "topics": {
+      "about": {
+        "title": "Sobre Cuánto llevo gastao",
+        "description": "Filosofia local, privadesa i com funcionen les teues dades."
+      },
+      "pwa": {
+        "title": "Instal·lació (PWA)",
+        "description": "Com instal·lar l'aplicació al teu mòbil o ordinador."
+      },
+      "maps": {
+        "title": "API de Google Maps",
+        "description": "Autocompletat de supermercats i geolocalització."
+      },
+      "backups": {
+        "title": "Còpies de Seguretat",
+        "description": "Com exportar, importar i protegir les teues dades."
+      }
+    }
+  },
+  "layout": {
+    "footer": {
+      "rights": "Tots els drets reservats.",
+      "terms": "Condicions Generals",
+      "privacy": "Política de Privacitat"
+    }
+  },
+  "expenses": {
+    "title": "Despeses",
+    "subtitle": "Gestiona les teves despeses i consulta el balanç net.",
+    "list_title": "Despeses",
+    "list_description": "Despeses de {month}",
+    "list_description_day": "Despeses del {day}",
+    "calendar_title": "Calendari de despeses",
+    "all_categories": "Totes les categories",
+    "categories": {
+      "carnes": "Carns",
+      "pescados": "Peix i Marisc",
+      "charcuteria": "Xarcuteria",
+      "verduras": "Verdures i Hortalisses",
+      "frutas": "Fruites",
+      "quesos": "Formatges",
+      "lacteos_huevos": "Lactis i Ous",
+      "panes_tostadas": "Pans i Torrades",
+      "desayuno_dulces_cafe": "Esmorzar, Dolços i Cafè",
+      "arroz_pastas_legumbres": "Arròs, Pastes i Llegums",
+      "caldos_sopas_pures": "Brous, Sopes i Purés",
+      "aperitivos_frutos_secos": "Aperitius i Fruits Secos",
+      "congelados": "Congelats",
+      "helados": "Gelats",
+      "bebidas": "Begudes",
+      "aceites_condimentos": "Olis, Salses i Condiments",
+      "conservas": "Conserves",
+      "limpieza": "Neteja i Drogueria",
+      "cuidado_personal": "Higiene i Cura Personal",
+      "mascotas": "Mascotes",
+      "hogar": "Bazar i Llar",
+      "otros": "Altres",
+      "vivienda": "Habitatge (Lloguer / Hipoteca)",
+      "suministros": "Subministraments (Llum, Aigua, Gas)",
+      "alimentacion": "Supermercat i Alimentació",
+      "transporte": "Transport i Vehicle",
+      "telecomunicaciones": "Internet, Telèfon i TV",
+      "salud": "Salut i Farmàcia",
+      "ropa_calzado": "Roba i Calçat",
+      "ocio_restauracion": "Oci i Restauració",
+      "suscripciones": "Subscripcions i Streaming",
+      "educacion": "Educació i Formació",
+      "seguros": "Assegurances i Finances",
+      "impuestos": "Impostos i Taxes",
+      "viajes": "Viatges i Vacances",
+      "frescos": "Frescos (Fruita, Verdura, Carn, Peix)",
+      "farmacia": "Farmàcia",
+      "diet": "Alimentació",
+      "parking": "Pàrquing",
+      "gas": "Benzina",
+      "tolls": "Peatges",
+      "other": "Altres"
+    },
+    "stats": {
+      "count": "{count} compres",
+      "diet_total": "Total gastat",
+      "other_total": "Nombre de compres",
+      "other_total_subtitle": "En el període seleccionat",
+      "daily_average": "Gasto mitjà",
+      "daily_average_subtitle": "Mitjana per tiquet/compra",
+      "net_balance": "Dies amb compres",
+      "net_balance_subtitle": "{days} dies amb compres registrades",
+      "by_category": "Per categoria"
+    },
+    "list_description_range": "Despeses del {start} al {end}"
+  },
+  "dashboard": {
+    "title": "Quant porto gastat?",
+    "subtitle": "Control intel·ligent de compres de supermercat",
+    "spent_this_month": "Gastat aquest mes",
+    "monthly_budget": "Pressupost mensual",
+    "budget_remaining": "Et queden {amount} €",
+    "budget_exceeded": "Superat en {amount} €",
+    "budget_pct": "{pct}% gastat",
+    "edit_budget": "Ajustar pressupost",
+    "set_budget_title": "Pressupost mensual",
+    "set_budget_description": "Configura el teu límit de despesa mensual per a supermercat.",
+    "budget_input_label": "Pressupost mensual (€)",
+    "new_expense": "Nova compra",
+    "scan_ticket": "Escanejar tiquet",
+    "categories_overview": "Despesa per categories aquest mes",
+    "recent_purchases": "Últimes compres del mes",
+    "no_purchases_month": "No hi ha compres registrades aquest mes encara.",
+    "view_all": "Veure totes les compres",
+    "daily_average": "Despesa mitjana diària",
+    "total_tickets": "Tiquets aquest mes",
+    "avg_ticket": "Mitjana per compra",
+    "items_breakdown": "Desglossament de productes",
+    "items_count": "{count} productes"
+  },
+  "statistics": {
+    "title": "Estadístiques de compres",
+    "subtitle": "Anàlisi detallada de les teves despeses per categoria i supermercat",
+    "all_months": "Tots els mesos",
+    "total_spent": "Total gastat",
+    "avg_ticket": "Tiquet mitjà",
+    "purchases_count": "{count} compres",
+    "by_category": "Despesa per categoria de productes",
+    "by_supermarket": "Despesa per supermercat",
+    "no_data": "No hi ha dades de compres per aquest període.",
+    "top_products": "Productes més freqüents"
+  },
+  "export_widget": {
+    "title": "Exportar despeses",
+    "subtitle": "Descarrega les teves despeses en format PDF, CSV o fitxer comprimit ZIP",
+    "badge": "PDF · CSV · ZIP",
+    "period_label": "Seleccionar període",
+    "format_label": "Format d'exportació",
+    "formats": {
+      "pdf": "Només PDF",
+      "pdf_desc": "Informe formatat",
+      "csv": "Només CSV",
+      "csv_desc": "Full de càlcul Excel",
+      "zip": "Tot en ZIP",
+      "zip_desc": "PDF + CSV + Tiquets"
+    },
+    "periods": {
+      "current_month": "Aquest mes",
+      "previous_month": "Mes anterior",
+      "current_quarter": "Aquest trimestre",
+      "current_semester": "Aquest semestre",
+      "previous_semester": "Semestre anterior",
+      "current_year": "Aquest any",
+      "previous_year": "Any anterior",
+      "all": "Tot l'historial",
+      "custom": "Període personalitzat..."
+    },
+    "custom_from": "Des de",
+    "custom_to": "Fins a",
+    "invalid_range": "La data d'inici no pot ser posterior a la data final.",
+    "period_preview": "Període:",
+    "expenses_count": "{count} despeses trobades",
+    "total_amount": "Total: {amount} €",
+    "target_file": "Fitxer:",
+    "includes_info": "Inclou informe en PDF, full de càlcul CSV i comprovants adjunts",
+    "no_expenses": "No hi ha despeses registrades en aquest període.",
+    "export_btn_pdf": "Descarregar informe PDF",
+    "export_btn_csv": "Descarregar full de càlcul CSV",
+    "export_btn_zip": "Descarregar fitxer ZIP",
+    "exporting_pdf": "Generant informe PDF...",
+    "exporting_csv": "Generant CSV...",
+    "exporting_zip": "Generant fitxer ZIP...",
+    "success_toast_pdf": "Informe PDF descarregat amb èxit",
+    "success_toast_csv": "Fitxer CSV descarregat amb èxit",
+    "success_toast_zip": "Fitxer ZIP descarregat amb èxit",
+    "error_toast": "Error en generar l'exportació"
+  }
+}
+

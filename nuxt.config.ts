@@ -1,0 +1,210 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
+import fs from 'node:fs'
+
+const baseURL = process.env.NUXT_APP_BASE_URL || '/'
+
+const getReleaseInfo = () => {
+  let version = process.env.NUXT_PUBLIC_APP_VERSION || ''
+  let releaseDate = process.env.NUXT_PUBLIC_APP_RELEASE_DATE || ''
+
+  try {
+    const changelogPath = new URL('./CHANGELOG.md', import.meta.url)
+    if (fs.existsSync(changelogPath)) {
+      const changelog = fs.readFileSync(changelogPath, 'utf8')
+      const match = changelog.match(/#+\s+\[?(\d+\.\d+\.\d+)\]?.*?\((\d{4}-\d{2}-\d{2})\)/)
+      if (match) {
+        if (!version || version === '1.0.0') version = match[1] || ''
+        if (!releaseDate) releaseDate = match[2] || ''
+      }
+    }
+  } catch {
+    // fallback if changelog cannot be accessed
+  }
+
+  if (!version) version = '1.0.0'
+  if (!releaseDate) releaseDate = new Date().toISOString().slice(0, 10)
+
+  return { version, releaseDate }
+}
+
+const releaseInfo = getReleaseInfo()
+
+export default defineNuxtConfig({
+  compatibilityDate: '2025-07-15',
+  future: {
+    compatibilityVersion: 4,
+  },
+  runtimeConfig: {
+    public: {
+      appVersion: releaseInfo.version,
+      appReleaseDate: releaseInfo.releaseDate,
+      googleClientId: process.env.NUXT_PUBLIC_GOOGLE_CLIENT_ID || ''
+    }
+  },
+  devtools: { enabled: true },
+  ssr: false,
+
+  app: {
+    baseURL: baseURL,
+    head: {
+      title: 'LotoControl - Control de Loterías y Premios',
+      link: [
+        { rel: 'icon', type: 'image/png', sizes: '196x196', href: baseURL + 'favicon-196.png' },
+        { rel: 'icon', type: 'image/x-icon', href: baseURL + 'favicon.ico' },
+        { rel: 'apple-touch-icon', href: baseURL + 'apple-icon-180.png' },
+        { rel: 'manifest', href: baseURL + 'manifest.webmanifest' }
+      ],
+      meta: [
+        { name: 'theme-color', content: '#1d4ed8' },
+        { name: 'msapplication-square70x70logo', content: baseURL + 'mstile-icon-128.png' },
+        { name: 'msapplication-square150x150logo', content: baseURL + 'mstile-icon-270.png' },
+        { name: 'msapplication-square310x310logo', content: baseURL + 'mstile-icon-558.png' },
+        { name: 'msapplication-wide310x150logo', content: baseURL + 'mstile-icon-558-270.png' },
+        { name: 'robots', content: 'noindex, nofollow' }
+      ]
+    }
+  },
+
+  css: ['./app/assets/css/main.css'],
+
+  modules: [
+    '@nuxt/ui',
+    '@nuxtjs/color-mode',
+    '@pinia/nuxt',
+    '@vite-pwa/nuxt',
+    '@nuxt/eslint',
+    '@nuxtjs/i18n'
+  ],
+
+  nitro: {
+    preset: 'github-pages',
+    debug: process.env.NUXT_DEBUG === '1'
+  },
+
+  i18n: {
+    langDir: 'locales',
+    locales: [
+      { code: 'es', language: 'es-ES', file: 'es.json' },
+      { code: 'ca', language: 'ca-ES', file: 'ca.json' },
+      { code: 'en', language: 'en-US', file: 'en.json' },
+      { code: 'hi', language: 'hi-IN', file: 'hi.json' }
+    ],
+    defaultLocale: 'es',
+    strategy: 'no_prefix',
+    compilation: {
+      strictMessage: false
+    }
+  },
+
+  icon: {
+    clientBundle: {
+      scan: true,
+      includeCustomCollections: true,
+      sizeLimitKb: 256,
+      icons: [
+        'heroicons:chevron-left-20-solid',
+        'heroicons:chevron-right-20-solid',
+        'heroicons:chevron-up-20-solid',
+        'heroicons:chevron-down-20-solid',
+        'heroicons:chevron-left',
+        'heroicons:chevron-right',
+        'heroicons:chevron-up',
+        'heroicons:chevron-down',
+        'heroicons:archive-box-arrow-down',
+        'heroicons:chart-bar',
+        'heroicons:shopping-cart',
+        'heroicons:shopping-bag',
+        'heroicons:banknotes',
+        'heroicons:calendar',
+        'heroicons:cog-6-tooth',
+        'heroicons:home',
+        'heroicons:plus',
+        'heroicons:camera',
+        'heroicons:sparkles',
+        'heroicons:tag',
+        'heroicons:trash',
+        'heroicons:pencil-square',
+        'heroicons:arrow-trending-up',
+        'heroicons:check-circle',
+        'heroicons:exclamation-triangle',
+        'lucide:chevron-left',
+        'lucide:chevron-right',
+        'lucide:chevron-up',
+        'lucide:chevron-down',
+        'lucide:chevrons-right',
+        'lucide:chevrons-left',
+        'lucide:refresh-cw',
+        'logos:google-icon',
+        'logos:github-icon'
+      ]
+    },
+  },
+
+  pwa: {
+    registerType: 'prompt',
+    manifest: {
+      scope: baseURL,
+      start_url: baseURL,
+      name: 'LotoControl - Control de Loterías y Premios',
+      short_name: 'LotoControl',
+      description: 'PWA para control de boletos de lotería del ONLAE, ONCE y otros con foto, estadísticas de gasto y balance de premios',
+      background_color: '#0f172a',
+      theme_color: '#1d4ed8',
+      display: 'standalone',
+      icons: [
+        {
+          src: 'manifest-icon-192.maskable.png',
+          sizes: '192x192',
+          type: 'image/png',
+          purpose: 'any'
+        },
+        {
+          src: 'manifest-icon-192.maskable.png',
+          sizes: '192x192',
+          type: 'image/png',
+          purpose: 'maskable'
+        },
+        {
+          src: 'manifest-icon-512.maskable.png',
+          sizes: '512x512',
+          type: 'image/png',
+          purpose: 'any'
+        },
+        {
+          src: 'manifest-icon-512.maskable.png',
+          sizes: '512x512',
+          type: 'image/png',
+          purpose: 'maskable'
+        }
+      ],
+      screenshots: [
+        {
+          src: 'pwa-screenshots/mobile.png',
+          sizes: '375x667',
+          type: 'image/png',
+          form_factor: 'narrow',
+          label: 'Mobile'
+        },
+        {
+          src: 'pwa-screenshots/desktop.png',
+          sizes: '1152x648',
+          type: 'image/png',
+          form_factor: 'wide',
+          label: 'Desktop'
+        }
+      ]
+    },
+    workbox: {
+      globPatterns: ['**/*.{js,css,html,png,svg,ico,woff2}']
+    },
+    client: {
+      installPrompt: true,
+    },
+    devOptions: {
+      enabled: false,
+      suppressWarnings: true,
+      navigateFallback: '/',
+      type: 'module',
+    },
+  }
+})
