@@ -1,7 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import {
   LOTTERY_ORGANIZATIONS,
-  LOTTERY_GAMES,
   getGameById,
   getGamesByOrganization
 } from '~/utils/lotteryGames'

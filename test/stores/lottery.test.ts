@@ -89,14 +89,14 @@ describe('useLotteryStore', () => {
 
     const onlaeTickets = store.getFilteredTickets({ organization: 'onlae' })
     expect(onlaeTickets).toHaveLength(1)
-    expect(onlaeTickets[0].organization).toBe('onlae')
+    expect(onlaeTickets[0]?.organization).toBe('onlae')
 
     const onceTickets = store.getFilteredTickets({ organization: 'once' })
     expect(onceTickets).toHaveLength(1)
-    expect(onceTickets[0].organization).toBe('once')
+    expect(onceTickets[0]?.organization).toBe('once')
 
     const wonTickets = store.getFilteredTickets({ status: 'won' })
     expect(wonTickets).toHaveLength(1)
-    expect(wonTickets[0].status).toBe('won')
+    expect(wonTickets[0]?.status).toBe('won')
   })
 })

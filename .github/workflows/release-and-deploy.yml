@@ -2,9 +2,9 @@ name: Release and Deploy
 
 on:
   push:
-    branches: [master, cuanto-llevo-gastao]
+    branches: [main]
   pull_request:
-    branches: [master, cuanto-llevo-gastao]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -55,7 +55,7 @@ jobs:
 
   build_and_deploy:
     needs: release
-    if: always() && needs.release.result != 'cancelled' && (needs.release.outputs.released == 'true' || github.event_name == 'workflow_dispatch')
+    if: needs.release.result == 'success'
     runs-on: ubuntu-latest
     environment: github-pages
     # Serialize actual Pages deployments without cancelling an in-flight one.
@@ -86,7 +86,7 @@ jobs:
             [[ "${BASE_URL}" != */ ]] && BASE_URL="${BASE_URL}/"
             export NUXT_APP_BASE_URL="$BASE_URL"
           else
-            export NUXT_APP_BASE_URL="/${{ github.event.repository.name || 'cuanto-llevo-gastao' }}/"
+            export NUXT_APP_BASE_URL="/${{ github.event.repository.name || 'Loterias-PWA' }}/"
           fi
           echo "Building with NUXT_APP_BASE_URL=$NUXT_APP_BASE_URL"
           npm run generate
@@ -129,7 +129,7 @@ jobs:
             [[ "${BASE_URL}" != */ ]] && BASE_URL="${BASE_URL}/"
             export NUXT_APP_BASE_URL="$BASE_URL"
           else
-            export NUXT_APP_BASE_URL="/${{ github.event.repository.name || 'cuanto-llevo-gastao' }}/"
+            export NUXT_APP_BASE_URL="/${{ github.event.repository.name || 'Loterias-PWA' }}/"
           fi
           npm run generate
         env:

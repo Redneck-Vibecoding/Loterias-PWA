@@ -3,13 +3,11 @@ import { v4 as uuidv4 } from 'uuid'
 import type { LotteryTicket } from '~/stores/lottery'
 import type { LotteryOrganization, LotteryStatus } from '~/utils/lotteryGames'
 import {
-  LOTTERY_ORGANIZATIONS,
-  LOTTERY_GAMES,
-  LOTTERY_STATUSES,
   getGamesByOrganization,
   getGameById
 } from '~/utils/lotteryGames'
 import { compressImageToDataUrl, fileToDataUrl } from '~/utils/ticket'
+import { getLotteryAttachment } from '~/utils/lotteryAttachments'
 import { parseLotteryTicketText } from '~/utils/lotteryOcr'
 import { recognizeImages } from '~/utils/ocr'
 
@@ -87,7 +85,7 @@ watch(() => state.game, (newGameId) => {
   }
 })
 
-watch(() => props.initialData, (t) => {
+watch(() => props.initialData, async (t) => {
   if (t) {
     state.id = t.id
     state.title = t.title
@@ -108,6 +106,13 @@ watch(() => props.initialData, (t) => {
     state.notes = t.notes || ''
     costInput.value = t.cost ? t.cost.toFixed(2) : '0.00'
     prizeInput.value = t.prize ? t.prize.toFixed(2) : '0.00'
+
+    if (!state.ticketPhoto && t.ticketPhotoId) {
+      const attachment = await getLotteryAttachment(t.ticketPhotoId)
+      if (attachment?.dataUrl && state.id === t.id) {
+        state.ticketPhoto = attachment.dataUrl
+      }
+    }
   } else {
     resetForm()
   }
@@ -164,13 +169,13 @@ const onFileSelected = async (event: Event) => {
   }
 }
 
-const onCropConfirm = async (blob: Blob) => {
+const onCropConfirm = async (blob: Blob, grayscale: boolean) => {
   try {
     isProcessingImage.value = true
-    const compressed = await compressImageToDataUrl(blob)
-    state.ticketPhoto = compressed
-    state.ticketPhotoName = `ticket-${Date.now()}.jpg`
-    state.ticketPhotoType = 'image/jpeg'
+    const compressed = await compressImageToDataUrl(blob, `ticket-${Date.now()}.jpg`, { grayscale })
+    state.ticketPhoto = compressed.dataUrl
+    state.ticketPhotoName = compressed.name
+    state.ticketPhotoType = compressed.type
 
     toast.add({
       title: 'Foto guardada',
@@ -179,7 +184,7 @@ const onCropConfirm = async (blob: Blob) => {
     })
 
     // Automatically trigger smart lottery OCR detection
-    runOcrAnalysis(compressed)
+    void runOcrAnalysis(compressed.dataUrl)
   } catch (e) {
     console.error('Error compressing image:', e)
   } finally {
@@ -190,9 +195,9 @@ const onCropConfirm = async (blob: Blob) => {
 const runOcrAnalysis = async (imageDataUrl: string) => {
   try {
     isRunningOcr.value = true
-    const ocrResult = await recognizeImages([imageDataUrl], 'spa')
-    if (ocrResult?.text) {
-      const parsed = parseLotteryTicketText(ocrResult.text)
+    const ocrText = await recognizeImages([imageDataUrl])
+    if (ocrText.trim()) {
+      const parsed = parseLotteryTicketText(ocrText)
       if (parsed.organization) state.organization = parsed.organization
       if (parsed.game) state.game = parsed.game
       if (parsed.gameName) state.gameName = parsed.gameName
@@ -323,7 +328,7 @@ const handleSave = async () => {
                   <div class="flex items-center gap-2">
                     <UButton
                       size="xs"
-                      color="brand"
+                      color="primary"
                       variant="subtle"
                       icon="i-heroicons-sparkles"
                       label="Re-escanear con OCR"
@@ -595,8 +600,9 @@ const handleSave = async () => {
           <div class="p-4 sm:p-5 border-t border-gray-100 dark:border-gray-800 flex items-center justify-end gap-3">
             <UButton color="neutral" variant="ghost" label="Cancelar" @click="isOpen = false" />
             <UButton
-              color="brand"
+              color="primary"
               icon="i-heroicons-check"
+              :loading="isProcessingImage"
               :label="isEditing ? 'Guardar Cambios' : 'Añadir Boleto'"
               @click="handleSave"
             />

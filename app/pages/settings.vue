@@ -208,7 +208,7 @@ const formatBytes = (bytes: number): string => {
 
       <div class="pt-2 flex justify-end">
         <UButton
-          color="brand"
+          color="primary"
           icon="i-heroicons-check"
           label="Guardar Preferencias"
           size="sm"
@@ -231,7 +231,7 @@ const formatBytes = (bytes: number): string => {
 
       <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
         <UButton
-          color="brand"
+          color="primary"
           variant="subtle"
           icon="i-heroicons-sparkles"
           label="Cargar Boletos de Prueba (Seed)"

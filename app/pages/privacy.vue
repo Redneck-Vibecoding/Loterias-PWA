@@ -106,6 +106,6 @@
 const { t } = useI18n()
 
 useHead({
-    title: computed(() => `${t('privacy.title')} - Cuánto llevo gastao`)
+    title: computed(() => `${t('privacy.title')} - LotoControl`)
 })
 </script>

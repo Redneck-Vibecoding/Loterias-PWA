@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { LotteryTicket } from '~/stores/lottery'
 import type { LotteryStatus } from '~/utils/lotteryGames'
-import { LOTTERY_STATUSES } from '~/utils/lotteryGames'
 
 const props = defineProps<{
   ticket: LotteryTicket | null
@@ -170,7 +169,7 @@ const handleSave = () => {
         <div class="flex justify-end gap-2 pt-2">
           <UButton color="neutral" variant="ghost" label="Cancelar" @click="isOpen = false" />
           <UButton
-            color="brand"
+            color="primary"
             icon="i-heroicons-check"
             label="Guardar Resultado"
             @click="handleSave"

@@ -1,8 +1,7 @@
 import {
   getTickets,
   getSettings,
-  setTickets,
-  setSettings
+  setTickets
 } from '~/utils/appDatabase'
 
 export default defineNuxtPlugin(async () => {

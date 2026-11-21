@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
-import type { LotteryTicket } from '~/stores/lottery'
 import type { LotteryOrganization } from '~/utils/lotteryGames'
 import {
   LOTTERY_ORGANIZATIONS,

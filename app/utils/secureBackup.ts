@@ -1,14 +1,16 @@
-import type { ExpenseRecord } from '~/stores/expenses'
+import type { LotteryTicket } from '~/stores/lottery'
 
 interface SettingsSnapshot {
   monthlyBudget?: number
+  defaultOrganization?: string
+  currency?: string
   openAiApiKey?: string
   locale?: string
   [key: string]: unknown
 }
 
 export interface BackupPayload {
-  expenses?: ExpenseRecord[]
+  tickets?: LotteryTicket[]
   settings?: SettingsSnapshot
   meta?: {
     month?: string

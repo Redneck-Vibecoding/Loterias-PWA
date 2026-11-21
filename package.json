@@ -3,6 +3,14 @@
   "type": "module",
   "private": true,
   "description": "PWA para llevar el control de boletos de lotería del ONLAE, ONCE y otros con foto, estadísticas y balance de premios",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Redneck-Vibecoding/Loterias-PWA.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Redneck-Vibecoding/Loterias-PWA/issues"
+  },
+  "homepage": "https://github.com/Redneck-Vibecoding/Loterias-PWA#readme",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxi dev --host 0.0.0.0",

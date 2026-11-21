@@ -2,7 +2,6 @@
 import { storeToRefs } from 'pinia'
 import type { LotteryTicket } from '~/stores/lottery'
 import type { LotteryOrganization, LotteryStatus } from '~/utils/lotteryGames'
-import { LOTTERY_ORGANIZATIONS } from '~/utils/lotteryGames'
 import type { PeriodFilter } from '~/utils/lotteryPeriods'
 import { getIsoWeekString } from '~/utils/lotteryPeriods'
 
@@ -296,7 +295,7 @@ const handleViewPhoto = (url: string, title: string) => {
         </p>
         <div class="pt-2 flex flex-wrap justify-center gap-2">
           <UButton
-            color="brand"
+            color="primary"
             icon="i-heroicons-camera"
             label="Añadir Boleto con Foto"
             @click="handleOpenNewTicket"
@@ -329,7 +328,7 @@ const handleViewPhoto = (url: string, title: string) => {
     <div class="fixed page-floating-action right-5 z-40 md:hidden">
       <UButton
         size="xl"
-        color="brand"
+        color="primary"
         icon="i-heroicons-camera"
         class="rounded-full shadow-2xl p-4"
         aria-label="Añadir boleto"

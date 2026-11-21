@@ -352,7 +352,7 @@ export const LOTTERY_STATUSES = {
     label: 'Pendiente de Sorteo',
     shortLabel: 'Pendiente',
     icon: 'i-heroicons-clock',
-    color: 'blue',
+    color: 'primary',
     hexColor: '#3b82f6',
     badgeVariant: 'subtle'
   },
@@ -361,7 +361,7 @@ export const LOTTERY_STATUSES = {
     label: 'Premiado',
     shortLabel: 'Premiado',
     icon: 'i-heroicons-trophy',
-    color: 'emerald',
+    color: 'success',
     hexColor: '#10b981',
     badgeVariant: 'solid'
   },
@@ -379,7 +379,7 @@ export const LOTTERY_STATUSES = {
     label: 'Reintegro',
     shortLabel: 'Reintegro',
     icon: 'i-heroicons-arrow-path',
-    color: 'cyan',
+    color: 'info',
     hexColor: '#06b6d4',
     badgeVariant: 'subtle'
   }

@@ -2,8 +2,7 @@
 import type { PeriodFilter, PeriodType } from '~/utils/lotteryPeriods'
 import {
   generateRecentWeeks,
-  getIsoWeekString,
-  formatWeekLabel
+  getIsoWeekString
 } from '~/utils/lotteryPeriods'
 
 const props = defineProps<{

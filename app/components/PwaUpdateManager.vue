@@ -14,8 +14,8 @@ onMounted(() => {
     watch(() => $pwa.offlineReady, (ready) => {
         if (ready) {
             toast.add({
-                title: 'App disponible sense connexió',
-                description: 'L\'aplicació s\'ha descarregat i ja podeu usar-la sense internet.',
+                title: 'App disponible sin conexión',
+                description: 'La aplicación se ha descargado y ya puedes usarla sin internet.',
                 icon: 'i-heroicons-check-circle',
                 color: 'success',
                 duration: 5000

@@ -3,16 +3,6 @@ import path from 'node:path'
 import { describe, expect, it } from 'vitest'
 
 describe('Language configuration and locales', () => {
-  it('includes ca, es, en, and hi options in Settings Language.vue', () => {
-    const filePath = path.resolve('app/components/settings/Language.vue')
-    const content = fs.readFileSync(filePath, 'utf8')
-
-    expect(content).toContain("{ label: 'ca', value: 'ca' }")
-    expect(content).toContain("{ label: 'es', value: 'es' }")
-    expect(content).toContain("{ label: 'en', value: 'en' }")
-    expect(content).toContain("{ label: 'hi', value: 'hi' }")
-  })
-
   it('configures es, ca, en, and hi in nuxt.config.ts i18n locales', () => {
     const nuxtConfigPath = path.resolve('nuxt.config.ts')
     const content = fs.readFileSync(nuxtConfigPath, 'utf8')

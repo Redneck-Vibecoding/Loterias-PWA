@@ -10,7 +10,6 @@ import {
   saveLotteryAttachment
 } from '~/utils/lotteryAttachments'
 import type { LotteryOrganization, LotteryStatus } from '~/utils/lotteryGames'
-import { getGameById } from '~/utils/lotteryGames'
 import { isDateInPeriod, type PeriodFilter } from '~/utils/lotteryPeriods'
 
 export interface LotteryTicket {
@@ -190,7 +189,7 @@ export const useLotteryStore = defineStore('lottery', {
       let attachmentRemoved = false
       if (existingIndex !== -1) {
         const existing = this.tickets[existingIndex]
-        if (existing.ticketPhotoId && !ticket.ticketPhoto && !ticket.ticketPhotoId) {
+        if (existing?.ticketPhotoId && !ticket.ticketPhoto && !ticket.ticketPhotoId) {
           await deleteLotteryAttachment(existing.ticketPhotoId)
           attachmentRemoved = true
         }
@@ -228,7 +227,7 @@ export const useLotteryStore = defineStore('lottery', {
       if (index === -1) return
 
       const ticket = this.tickets[index]
-      if (ticket.ticketPhotoId) {
+      if (ticket?.ticketPhotoId) {
         await deleteLotteryAttachment(ticket.ticketPhotoId)
       }
 

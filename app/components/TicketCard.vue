@@ -211,7 +211,7 @@ const handleViewPhoto = () => {
       <div class="flex items-center gap-1">
         <UButton
           size="xs"
-          color="brand"
+          color="primary"
           variant="subtle"
           icon="i-heroicons-check-circle"
           label="Premios"

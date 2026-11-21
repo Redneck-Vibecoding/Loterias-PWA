@@ -1,7 +1,6 @@
 {
     "branches": [
-        "master",
-        "cuanto-llevo-gastao"
+        "main"
     ],
     "plugins": [
         "@semantic-release/commit-analyzer",

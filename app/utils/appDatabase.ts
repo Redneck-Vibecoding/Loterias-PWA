@@ -41,6 +41,10 @@ const isIndexedDbAvailable = () => typeof indexedDB !== 'undefined'
 
 let dbPromise: Promise<IDBDatabase> | null = null
 
+export const resetAppDatabaseConnection = (): void => {
+  dbPromise = null
+}
+
 const requestToPromise = <T>(request: IDBRequest<T>): Promise<T> =>
   new Promise((resolve, reject) => {
     request.onsuccess = () => resolve(request.result)
@@ -148,6 +152,23 @@ export const getSettings = async (): Promise<AppSettingsSnapshot | null> => {
 
 export const setSettings = async (settings: AppSettingsSnapshot): Promise<void> => {
   return setAppStateValue(APP_STATE_KEYS.settings, settings)
+}
+
+export const getUiPreference = async <T extends boolean | string | number | null>(key: string): Promise<T | null> => {
+  const prefs = await getAppStateValue<UiPreferences>(APP_STATE_KEYS.uiPreferences)
+  if (!prefs || !(key in prefs)) return null
+  return prefs[key] as T
+}
+
+export const setUiPreference = async (
+  key: string,
+  value: boolean | string | number | null
+): Promise<void> => {
+  const prefs = (await getAppStateValue<UiPreferences>(APP_STATE_KEYS.uiPreferences)) || {}
+  await setAppStateValue<UiPreferences>(APP_STATE_KEYS.uiPreferences, {
+    ...prefs,
+    [key]: value
+  })
 }
 
 export const getDatabaseUsageStats = async (): Promise<AppDatabaseUsageStats> => {

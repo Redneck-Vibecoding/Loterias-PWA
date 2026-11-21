@@ -36,7 +36,7 @@ export const getIsoWeekString = (dateInput: Date | string): string => {
  */
 export const getIsoWeekBounds = (weekStr: string): { start: Date, end: Date } => {
   const match = weekStr.match(/^(\d{4})-W(\d{2})$/)
-  if (!match) {
+  if (!match || !match[1] || !match[2]) {
     const now = new Date()
     return { start: now, end: now }
   }

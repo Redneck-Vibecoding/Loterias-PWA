@@ -3,12 +3,9 @@ import { storeToRefs } from 'pinia'
 import type { LotteryTicket } from '~/stores/lottery'
 import type { LotteryOrganization, LotteryStatus } from '~/utils/lotteryGames'
 import {
-  LOTTERY_ORGANIZATIONS,
-  LOTTERY_GAMES,
   getGamesByOrganization
 } from '~/utils/lotteryGames'
 import type { PeriodFilter } from '~/utils/lotteryPeriods'
-import { getIsoWeekString } from '~/utils/lotteryPeriods'
 
 const lotteryStore = useLotteryStore()
 const { tickets } = storeToRefs(lotteryStore)
@@ -19,7 +16,6 @@ const selectedOrg = ref<LotteryOrganization | 'all'>('all')
 const selectedGame = ref<string | 'all'>('all')
 const selectedStatus = ref<LotteryStatus | 'all'>('all')
 
-const currentWeek = getIsoWeekString(new Date())
 const selectedPeriod = ref<PeriodFilter>({
   type: 'all' // By default on tickets page show all or filter by period
 })
@@ -118,7 +114,7 @@ const resetFilters = () => {
 
       <div class="flex items-center gap-2">
         <UButton
-          color="brand"
+          color="primary"
           size="md"
           icon="i-heroicons-camera"
           label="Añadir Boleto"

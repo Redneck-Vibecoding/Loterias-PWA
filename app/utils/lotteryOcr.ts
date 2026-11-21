@@ -106,9 +106,9 @@ export const parseLotteryTicketText = (text: string): ParsedLotteryData => {
   // Detect Date
   // Patterns like 21/11/2026 or 21-11-26
   const dateMatch = text.match(/\b(\d{1,2})[/.-](\d{1,2})[/.-](\d{2,4})\b/)
-  if (dateMatch) {
-    let day = dateMatch[1].padStart(2, '0')
-    let month = dateMatch[2].padStart(2, '0')
+  if (dateMatch && dateMatch[1] && dateMatch[2] && dateMatch[3]) {
+    const day = dateMatch[1].padStart(2, '0')
+    const month = dateMatch[2].padStart(2, '0')
     let year = dateMatch[3]
     if (year.length === 2) year = '20' + year
     drawDate = `${year}-${month}-${day}`
@@ -122,7 +122,7 @@ export const parseLotteryTicketText = (text: string): ParsedLotteryData => {
   ]
   for (const rg of priceRegexes) {
     const match = text.match(rg)
-    if (match) {
+    if (match && match[1]) {
       const parsed = parseFloat(match[1].replace(',', '.'))
       if (parsed > 0 && parsed < 1000) {
         cost = parsed
@@ -133,7 +133,7 @@ export const parseLotteryTicketText = (text: string): ParsedLotteryData => {
 
   // Detect Bets count
   const betsMatch = text.match(/(\d+)\s*(?:APUESTAS?|COLUMNAS?|JUGADAS?)/i)
-  if (betsMatch) {
+  if (betsMatch && betsMatch[1]) {
     betsCount = parseInt(betsMatch[1], 10)
   }
 
