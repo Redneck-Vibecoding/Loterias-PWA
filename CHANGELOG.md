@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Redneck-Vibecoding/Loterias-PWA/compare/v1.0.2...v1.1.0) (2026-11-21)
+
+
+### Features
+
+* **branding:** replace startup splash and PWA icons with lottery logo and show app version in settings ([79a3b1b](https://github.com/Redneck-Vibecoding/Loterias-PWA/commit/79a3b1b9a5b1dd7916b5b48bafe8f42ef336265d))
+
 ## [1.0.2](https://github.com/Redneck-Vibecoding/Loterias-PWA/compare/v1.0.1...v1.0.2) (2026-11-21)
 
 
