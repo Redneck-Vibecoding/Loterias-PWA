@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Redneck-Vibecoding/Loterias-PWA/compare/v1.0.0...v1.0.1) (2026-11-21)
+
+
+### Bug Fixes
+
+* **tickets:** declare resetForm before immediate watcher to prevent TDZ crash ([6dd2abc](https://github.com/Redneck-Vibecoding/Loterias-PWA/commit/6dd2abc061211d60b043675c3dfabdcc5da24306))
+
 # 1.0.0 (2026-11-21)
 
 
