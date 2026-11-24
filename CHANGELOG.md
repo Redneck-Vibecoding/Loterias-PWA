@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/Redneck-Vibecoding/Loterias-PWA/compare/v1.3.1...v1.3.2) (2026-11-24)
+
+
+### Bug Fixes
+
+* **settings:** align version notice left and share button right in top banner ([#2](https://github.com/Redneck-Vibecoding/Loterias-PWA/issues/2)) ([b01cb13](https://github.com/Redneck-Vibecoding/Loterias-PWA/commit/b01cb13f0711c4af52980754d6fd9e56dabbecb7))
+
 ## [1.3.1](https://github.com/Redneck-Vibecoding/Loterias-PWA/compare/v1.3.0...v1.3.1) (2026-11-24)
 
 
