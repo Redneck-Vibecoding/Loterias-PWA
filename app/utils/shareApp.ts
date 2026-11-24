@@ -6,19 +6,29 @@ export interface ShareAppOptions {
 
 export type ShareAppOutcome = 'shared' | 'copied' | 'cancelled' | 'failed'
 
+export const DEFAULT_GITHUB_PAGES_URL = 'https://redneck-vibecoding.github.io/Loterias-PWA/'
+
+const LOCAL_HOSTNAMES = new Set(['localhost', '127.0.0.1', '0.0.0.0', '[::1]'])
+
 /**
  * Builds the canonical root application URL using the configured baseURL
- * and current window origin.
+ * and current window origin, falling back to fallbackUrl on local dev origins.
  */
-export function getAppShareUrl(baseURL = '/'): string {
-  if (typeof window === 'undefined') return baseURL
+export function getAppShareUrl(baseURL = '/', fallbackUrl?: string): string {
+  if (typeof window === 'undefined') return fallbackUrl || baseURL
 
   try {
     const origin = window.location.origin
-    if (!origin) return baseURL
-    return new URL(baseURL, origin).href
+    if (!origin) return fallbackUrl || baseURL
+
+    const resolved = new URL(baseURL, origin)
+    if (fallbackUrl && LOCAL_HOSTNAMES.has(resolved.hostname)) {
+      return fallbackUrl
+    }
+
+    return resolved.href
   } catch {
-    return window.location.origin ? `${window.location.origin}${baseURL}` : baseURL
+    return window.location.origin ? `${window.location.origin}${baseURL}` : (fallbackUrl || baseURL)
   }
 }
 
@@ -28,7 +38,7 @@ export function getAppShareUrl(baseURL = '/'): string {
  */
 export async function shareApp(options: ShareAppOptions): Promise<ShareAppOutcome> {
   const url = options.url || (typeof window !== 'undefined' ? window.location.origin : '')
-  const title = options.title || 'Cuánto llevo gastao'
+  const title = options.title || 'LotoControl PWA'
   const text = options.text
 
   const shareData: ShareData = {

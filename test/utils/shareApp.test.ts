@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { getAppShareUrl, shareApp } from '../../app/utils/shareApp'
+import { DEFAULT_GITHUB_PAGES_URL, getAppShareUrl, shareApp } from '../../app/utils/shareApp'
 
 describe('shareApp utility', () => {
   const originalNavigator = global.navigator
@@ -23,23 +23,35 @@ describe('shareApp utility', () => {
   })
 
   describe('getAppShareUrl', () => {
-    it('returns baseUrl when window is undefined', () => {
+    it('returns baseUrl when window is undefined without fallback', () => {
       Object.defineProperty(global, 'window', {
         value: undefined,
         writable: true,
         configurable: true
       })
       expect(getAppShareUrl('/app/')).toBe('/app/')
+      expect(getAppShareUrl('/app/', DEFAULT_GITHUB_PAGES_URL)).toBe(DEFAULT_GITHUB_PAGES_URL)
     })
 
     it('resolves relative baseUrl against window.location.origin', () => {
       Object.defineProperty(global, 'window', {
-        value: { location: { origin: 'https://example.com' } },
+        value: { location: { origin: 'https://redneck-vibecoding.github.io' } },
         writable: true,
         configurable: true
       })
-      expect(getAppShareUrl('/')).toBe('https://example.com/')
-      expect(getAppShareUrl('/cuanto-llevo-gastao/')).toBe('https://example.com/cuanto-llevo-gastao/')
+      expect(getAppShareUrl('/')).toBe('https://redneck-vibecoding.github.io/')
+      expect(getAppShareUrl('/Loterias-PWA/', DEFAULT_GITHUB_PAGES_URL)).toBe(
+        'https://redneck-vibecoding.github.io/Loterias-PWA/'
+      )
+    })
+
+    it('uses fallbackUrl when running on localhost', () => {
+      Object.defineProperty(global, 'window', {
+        value: { location: { origin: 'http://localhost:3000' } },
+        writable: true,
+        configurable: true
+      })
+      expect(getAppShareUrl('/', DEFAULT_GITHUB_PAGES_URL)).toBe(DEFAULT_GITHUB_PAGES_URL)
     })
   })
 

@@ -5,12 +5,16 @@ import {
   type AppDatabaseUsageStats
 } from '~/utils/appDatabase'
 import type { LotteryOrganization } from '~/utils/lotteryGames'
+import { DEFAULT_GITHUB_PAGES_URL, getAppShareUrl, shareApp } from '~/utils/shareApp'
 
 const lotteryStore = useLotteryStore()
 const settingsStore = useSettingsStore()
 const { tickets } = storeToRefs(lotteryStore)
-const { public: { appVersion, appReleaseDate } } = useRuntimeConfig()
+const runtimeConfig = useRuntimeConfig()
+const { public: { appVersion, appReleaseDate } } = runtimeConfig
+const { t } = useI18n()
 const toast = useToast()
+const isSharingApp = ref(false)
 
 const monthlyBudgetInput = ref(String(settingsStore.monthlyBudget || 50))
 const selectedOrg = ref<LotteryOrganization>(settingsStore.defaultOrganization || 'onlae')
@@ -146,6 +150,43 @@ const formatBytes = (bytes: number): string => {
   const i = Math.floor(Math.log(bytes) / Math.log(k))
   return `${parseFloat((bytes / Math.pow(k, i)).toFixed(2))} ${sizes[i]}`
 }
+
+const handleShareApp = async () => {
+  if (isSharingApp.value) return
+  isSharingApp.value = true
+  try {
+    const baseURL = (runtimeConfig.app?.baseURL as string) || '/'
+    const shareUrl = getAppShareUrl(baseURL, DEFAULT_GITHUB_PAGES_URL)
+
+    const outcome = await shareApp({
+      title: t('settings.share_app_title'),
+      text: t('settings.share_app_text'),
+      url: shareUrl
+    })
+
+    if (outcome === 'shared') {
+      toast.add({
+        title: t('settings.share_app_success'),
+        color: 'success',
+        icon: 'i-heroicons-check-circle'
+      })
+    } else if (outcome === 'copied') {
+      toast.add({
+        title: t('settings.share_app_copied'),
+        description: shareUrl,
+        color: 'success',
+        icon: 'i-heroicons-check-circle'
+      })
+    } else if (outcome === 'failed') {
+      toast.add({
+        title: shareUrl,
+        color: 'neutral'
+      })
+    }
+  } finally {
+    isSharingApp.value = false
+  }
+}
 </script>
 
 <template>
@@ -174,13 +215,28 @@ const formatBytes = (bytes: number): string => {
     </div>
 
     <!-- Header -->
-    <div>
-      <h1 class="text-2xl sm:text-3xl font-black text-gray-900 dark:text-white tracking-tight">
-        Ajustes y Datos
-      </h1>
-      <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-0.5">
-        Gestiona tus preferencias de presupuesto, copias de seguridad y almacenamiento
-      </p>
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <div>
+        <h1 class="text-2xl sm:text-3xl font-black text-gray-900 dark:text-white tracking-tight">
+          Ajustes y Datos
+        </h1>
+        <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-0.5">
+          Gestiona tus preferencias de presupuesto, copias de seguridad y almacenamiento
+        </p>
+      </div>
+
+      <UButton
+        id="share-app-url-btn"
+        icon="i-heroicons-share"
+        color="neutral"
+        variant="outline"
+        size="sm"
+        class="rounded-xl shadow-2xs cursor-pointer font-medium self-start sm:self-center shrink-0"
+        :loading="isSharingApp"
+        @click="handleShareApp"
+      >
+        {{ $t('settings.share_app') }}
+      </UButton>
     </div>
 
     <!-- 1. GENERAL PREFERENCES -->

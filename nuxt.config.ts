@@ -161,6 +161,7 @@ export default defineNuxtConfig({
         'heroicons:adjustments-horizontal',
         'heroicons:adjustments-vertical',
         'heroicons:server-stack',
+        'heroicons:share',
         'heroicons:ellipsis-vertical',
         'heroicons:x-mark',
         'lucide:chevron-left',
