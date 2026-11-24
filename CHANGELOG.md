@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/Redneck-Vibecoding/Loterias-PWA/compare/v1.3.0...v1.3.1) (2026-11-24)
+
+
+### Bug Fixes
+
+* **ci:** resolve lint errors and run lint and typecheck in CI ([#1](https://github.com/Redneck-Vibecoding/Loterias-PWA/issues/1)) ([d4ef596](https://github.com/Redneck-Vibecoding/Loterias-PWA/commit/d4ef5964032ad4c8d31bc1b1a4e81bec1723d345))
+
 # [1.3.0](https://github.com/Redneck-Vibecoding/Loterias-PWA/compare/v1.2.1...v1.3.0) (2026-11-24)
 
 
