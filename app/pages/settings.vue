@@ -203,40 +203,40 @@ const handleShareApp = async () => {
         </div>
       </div>
 
-      <div class="flex items-center gap-2">
-        <span class="text-[11px] font-bold uppercase tracking-wider text-blue-200">Versión</span>
-        <span class="px-2.5 py-1 rounded-xl bg-white/15 border border-white/25 font-mono text-xs sm:text-sm font-black text-white">
-          v{{ appVersion }}
-        </span>
-        <span v-if="appReleaseDate" class="text-xs text-blue-100 hidden sm:inline">
-          ({{ appReleaseDate }})
-        </span>
+      <div class="flex items-center justify-end gap-2 sm:gap-3 ml-auto">
+        <div class="flex items-center gap-2">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-blue-200">Versión</span>
+          <span class="px-2.5 py-1 rounded-xl bg-white/15 border border-white/25 font-mono text-xs sm:text-sm font-black text-white">
+            v{{ appVersion }}
+          </span>
+          <span v-if="appReleaseDate" class="text-xs text-blue-100 hidden sm:inline">
+            ({{ appReleaseDate }})
+          </span>
+        </div>
+
+        <UButton
+          id="share-app-url-btn"
+          icon="i-heroicons-share"
+          color="neutral"
+          variant="ghost"
+          size="sm"
+          class="bg-white/15 hover:bg-white/25 text-white border border-white/25 rounded-xl cursor-pointer font-semibold shrink-0"
+          :loading="isSharingApp"
+          @click="handleShareApp"
+        >
+          {{ $t('settings.share_app') }}
+        </UButton>
       </div>
     </div>
 
     <!-- Header -->
-    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-      <div>
-        <h1 class="text-2xl sm:text-3xl font-black text-gray-900 dark:text-white tracking-tight">
-          Ajustes y Datos
-        </h1>
-        <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-0.5">
-          Gestiona tus preferencias de presupuesto, copias de seguridad y almacenamiento
-        </p>
-      </div>
-
-      <UButton
-        id="share-app-url-btn"
-        icon="i-heroicons-share"
-        color="neutral"
-        variant="outline"
-        size="sm"
-        class="rounded-xl shadow-2xs cursor-pointer font-medium self-start sm:self-center shrink-0"
-        :loading="isSharingApp"
-        @click="handleShareApp"
-      >
-        {{ $t('settings.share_app') }}
-      </UButton>
+    <div>
+      <h1 class="text-2xl sm:text-3xl font-black text-gray-900 dark:text-white tracking-tight">
+        Ajustes y Datos
+      </h1>
+      <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-0.5">
+        Gestiona tus preferencias de presupuesto, copias de seguridad y almacenamiento
+      </p>
     </div>
 
     <!-- 1. GENERAL PREFERENCES -->
