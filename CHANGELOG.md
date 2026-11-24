@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/Redneck-Vibecoding/Loterias-PWA/compare/v1.2.0...v1.2.1) (2026-11-24)
+
+
+### Bug Fixes
+
+* **ci:** split build and deploy jobs to prevent duplicate pages artifacts on rerun ([723f361](https://github.com/Redneck-Vibecoding/Loterias-PWA/commit/723f3616baa6f3c9214bb6585394fbe5f3bbddbb))
+
 # [1.2.0](https://github.com/Redneck-Vibecoding/Loterias-PWA/compare/v1.1.0...v1.2.0) (2026-11-24)
 
 
