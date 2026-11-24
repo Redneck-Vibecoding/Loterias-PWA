@@ -194,7 +194,7 @@ const handleShareApp = async () => {
     <input ref="fileInputRef" type="file" accept=".json" class="hidden" @change="handleFileSelected" />
 
     <!-- App Version Identifier -->
-    <div class="rounded-3xl bg-gradient-to-r from-brand-700 via-brand-600 to-brand-800 text-white p-4 sm:p-5 shadow-md flex flex-wrap items-center justify-between gap-3">
+    <div class="rounded-3xl bg-gradient-to-r from-brand-700 via-brand-600 to-brand-800 text-white p-4 sm:p-5 shadow-md flex flex-col gap-3">
       <div class="flex items-center gap-3">
         <SiteLogo class="size-11 shrink-0 rounded-2xl shadow-xs" />
         <div>
@@ -203,7 +203,7 @@ const handleShareApp = async () => {
         </div>
       </div>
 
-      <div class="flex items-center justify-end gap-2 sm:gap-3 ml-auto">
+      <div class="flex flex-wrap items-center justify-between gap-2 sm:gap-3 w-full">
         <div class="flex items-center gap-2">
           <span class="text-[11px] font-bold uppercase tracking-wider text-blue-200">Versión</span>
           <span class="px-2.5 py-1 rounded-xl bg-white/15 border border-white/25 font-mono text-xs sm:text-sm font-black text-white">
@@ -220,7 +220,7 @@ const handleShareApp = async () => {
           color="neutral"
           variant="ghost"
           size="sm"
-          class="bg-white/15 hover:bg-white/25 text-white border border-white/25 rounded-xl cursor-pointer font-semibold shrink-0"
+          class="bg-white/15 hover:bg-white/25 text-white border border-white/25 rounded-xl cursor-pointer font-semibold shrink-0 ml-auto"
           :loading="isSharingApp"
           @click="handleShareApp"
         >
