@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/Redneck-Vibecoding/Loterias-PWA/compare/v1.1.0...v1.2.0) (2026-11-24)
+
+
+### Features
+
+* **settings:** add share app button for GitHub Pages URL ([55841f9](https://github.com/Redneck-Vibecoding/Loterias-PWA/commit/55841f94d0be54cc7f6d8a12aad0594161185eaa))
+
 # [1.1.0](https://github.com/Redneck-Vibecoding/Loterias-PWA/compare/v1.0.2...v1.1.0) (2026-11-21)
 
 
