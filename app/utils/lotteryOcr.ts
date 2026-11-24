@@ -18,7 +18,6 @@ export const parseLotteryTicketText = (text: string): ParsedLotteryData => {
 
   let organization: LotteryOrganization = 'onlae'
   let game = 'bonoloto'
-  let title = 'Boleto de Lotería'
   let betsCount: number | undefined
   let cost: number | undefined
   let drawDate: string | undefined
@@ -28,79 +27,60 @@ export const parseLotteryTicketText = (text: string): ParsedLotteryData => {
   if (upper.includes('EUROMILLONES') || upper.includes('EUROMILLIONS') || upper.includes('EL MILLON')) {
     organization = 'onlae'
     game = 'euromillones'
-    title = 'Euromillones'
   } else if (upper.includes('BONOLOTO')) {
     organization = 'onlae'
     game = 'bonoloto'
-    title = 'Bonoloto'
   } else if (upper.includes('PRIMITIVA') && !upper.includes('GORDO')) {
     organization = 'onlae'
     game = 'primitiva'
-    title = 'La Primitiva'
   } else if (upper.includes('GORDO')) {
     organization = 'onlae'
     game = 'gordo_primitiva'
-    title = 'El Gordo de la Primitiva'
   } else if (upper.includes('EURODREAMS')) {
     organization = 'onlae'
     game = 'eurodreams'
-    title = 'EuroDreams'
   } else if (upper.includes('QUINIELA')) {
     organization = 'onlae'
     game = 'quiniela'
-    title = 'La Quiniela'
   } else if (upper.includes('QUINIGOL')) {
     organization = 'onlae'
     game = 'quinigol'
-    title = 'El Quinigol'
   } else if (upper.includes('LOTERIA NACIONAL') || (upper.includes('DECIMO') && !upper.includes('ONCE'))) {
     organization = 'onlae'
     game = 'nacional'
-    title = 'Lotería Nacional'
   } else if (upper.includes('NAVIDAD') || upper.includes('EL NIÑO')) {
     organization = 'onlae'
     game = 'navidad_nino'
-    title = 'Lotería de Navidad'
   } else if (upper.includes('CUPONAZO')) {
     organization = 'once'
     game = 'cuponazo'
-    title = 'Cuponazo ONCE'
   } else if (upper.includes('SUELDAZO')) {
     organization = 'once'
     game = 'sueldazo'
-    title = 'Sueldazo ONCE'
   } else if (upper.includes('EUROJACKPOT')) {
     organization = 'once'
     game = 'eurojackpot'
-    title = 'Eurojackpot ONCE'
   } else if (upper.includes('TRIPLEX')) {
     organization = 'once'
     game = 'triplex'
-    title = 'Triplex ONCE'
   } else if (upper.includes('MI DIA')) {
     organization = 'once'
     game = 'mi_dia'
-    title = 'Mi Día ONCE'
   } else if (upper.includes('SUPER ONCE')) {
     organization = 'once'
     game = 'super_once'
-    title = 'Super Once'
   } else if (upper.includes('RASCA')) {
     organization = 'once'
     game = 'rascas'
-    title = 'Rasca de la ONCE'
   } else if (upper.includes('ONCE') || upper.includes('CUPON')) {
     organization = 'once'
     game = 'cupon_diario'
-    title = 'Cupón Diario ONCE'
   } else if (upper.includes('GROSSA') || upper.includes('CATALUNYA') || upper.includes('6/49')) {
     organization = 'otros'
     game = 'loto_catalunya'
-    title = 'Loto Catalunya'
   } else if (upper.includes('RIFA') || upper.includes('CESTA')) {
     organization = 'otros'
     game = 'rifas'
-    title = 'Rifa / Sorteo'
   }
 
   // Detect Date
