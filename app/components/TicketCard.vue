@@ -12,9 +12,8 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  (e: 'edit', ticket: LotteryTicket): void
+  (e: 'edit' | 'checkPrize', ticket: LotteryTicket): void
   (e: 'delete', id: string): void
-  (e: 'checkPrize', ticket: LotteryTicket): void
   (e: 'viewPhoto', photoUrl: string, title: string): void
 }>()
 
